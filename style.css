@@ -1,48 +1,108 @@
-header{
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    header{
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+    }
+    .logo{
+        margin: 10px;
+        font-size: 8rem;
+        line-height: 1;
+        margin: 25px;
+        margin-top: 100px;
+        display: flex;
+        gap: 1rem;
+    }
+    @media (max-width: 768px) {
+        .logo h1 {
+        font-size: 5rem; /* Sesuaikan ukuran font untuk layar yang lebih kecil */
+        left: 0   ;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .logo h1 {
+        font-size: 4rem; /* Sesuaikan ukuran font untuk layar yang lebih kecil lagi */
+        }
+    }
+    nav {
+        position: absolute; 
+        top: 0; 
+        right: 0; 
+        margin: 10px;
+    }
+    nav ul {
+        list-style-type: none; /* Menghilangkan bullet point */
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline-block; /* Menampilkan item dalam satu baris */
+        margin-left: 15px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+    nav ul li a:hover {
+        background-color: lightgray; /* Efek hover */
+        border-radius: 4px; 
+    }
+    .box{
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 50px;
+        width: auto;
+        height: auto;
+    }
+    /* Styling default untuk menu navigasi */
+.menu-toggle {
+    display: none; /* Sembunyikan tombol menu saat layar besar */
 }
 
-.logo{
-    margin: 10px;
-    font-size: 100px;
-    line-height: 1;
-    margin: 25px;
-    margin-top: 100px;
+/* Responsive styling untuk layar kecil */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Sembunyikan nav saat layar kecil */
+        position: absolute; /* Pastikan posisinya absolut */
+        width: 100%; /* Ambil lebar penuh */
+        top: 60px; /* Atur jarak dari atas sesuai posisi tombol */
+        left: 0;
+        right: 0;
+        background-color: white; /* Tambahkan background untuk menu */
+        z-index: 1; /* Pastikan menu muncul di atas */
+    }
+    .menu-toggle {
+        display: block; /* Tampilkan tombol menu */
+        font-size: 24px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    nav ul {
+        display: block; /* Tampilkan menu dalam satu kolom */
+        margin: 0;
+        padding: 0;
+        text-align: center; /* Posisikan teks di tengah */
+    }
+    nav ul li {
+        display: block; /* Atur item agar vertikal */
+        margin: 10px 0;
+    }
+    nav ul li a {
+        display: block;
+        padding: 12px;
+        text-align: center; /* Teks di tengah */
+        border-bottom: 1px solid #ddd; /* Garis bawah antar menu */
+    }
 }
 
-
-nav {
-    position: absolute; /* Mengatur posisi elemen */
-    top: 0; /* Menempelkan ke bagian atas halaman */
-    right: 0; /* Menempelkan ke bagian kanan halaman */
-    margin: 10px;
-}
-nav ul {
-    list-style-type: none; /* Menghilangkan bullet point */
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    display: inline-block; /* Menampilkan item dalam satu baris */
-    margin-left: 15px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    padding: 8px 16px;
-}
-nav ul li a:hover {
-    background-color: lightgray; /* Efek hover */
-    border-radius: 4px; 
-}
-.box{
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 50px;
-    width: auto;
-    height: auto;
+/* CSS untuk toggle efek */
+nav.open {
+    display: block; /* Tampilkan navigasi saat toggle "open" */
 }

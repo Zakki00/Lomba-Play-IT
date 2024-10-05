@@ -13,3 +13,12 @@ function changeContent(sectionId, content) {
         section.innerHTML = content;
     }
 }
+// Seleksi elemen
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+// Tambahkan event listener pada tombol menu
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open'); // Toggle class 'open' untuk menampilkan/menyembunyikan navigasi
+});
+
