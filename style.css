@@ -1,81 +1,90 @@
-    header{
-            font-family: 'Poppins', sans-serif;
-            font-size: 20px;
-    }
-    .logo{
-        margin: 10px;
-        font-size: 8rem;
-        line-height: 1;
-        margin: 25px;
-        margin-top: 100px;
-        display: flex;
-        gap: 1rem;
-    }
-    @media (max-width: 768px) {
-        .logo h1 {
-        font-size: 5rem; /* Sesuaikan ukuran font untuk layar yang lebih kecil */
-        left: 0   ;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .logo h1 {
-        font-size: 4rem; /* Sesuaikan ukuran font untuk layar yang lebih kecil lagi */
-        }
-    }
-    nav {
-        position: absolute; 
-        top: 0; 
-        right: 0; 
-        margin: 10px;
-    }
-    nav ul {
-        list-style-type: none; /* Menghilangkan bullet point */
-        margin: 0;
-        padding: 0;
-    }
-    nav ul li {
-        display: inline-block; /* Menampilkan item dalam satu baris */
-        margin-left: 15px;
-    }
-    nav ul li a {
-        text-decoration: none;
-        color: black;
-        font-size: 18px;
-        padding: 8px 16px;
-    }
-    nav ul li a:hover {
-        background-color: lightgray; /* Efek hover */
-        border-radius: 4px; 
-    }
-    .box{
-        background-color: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 50px;
-        width: auto;
-        height: auto;
-    }
-    /* Styling default untuk menu navigasi */
-.menu-toggle {
-    display: none; /* Sembunyikan tombol menu saat layar besar */
+/* Styling default */
+*::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
 }
 
-/* Responsive styling untuk layar kecil */
+/* Styling Header */
+header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    
+}
+
+/* Styling Logo */
+.logo {
+    display: flex;
+    font-size: 8rem;
+    line-height: 1;
+    margin-top: 100px;
+    gap: 1rem;
+    color: #ffffff ;
+}
+
+/* Responsive Logo */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 5rem;
+        left: 0;
+    }
+}
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Styling Menu Navigasi */
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 8px 16px;
+}
+
+nav ul li a:hover {
+    background-color: lightgray;
+    border-radius: 4px;
+}
+
+/* Responsive Menu */
+.menu-toggle {
+    display: none;
+}
+
 @media (max-width: 768px) {
     nav {
-        display: none; /* Sembunyikan nav saat layar kecil */
-        position: absolute; /* Pastikan posisinya absolut */
-        width: 100%; /* Ambil lebar penuh */
-        top: 60px; /* Atur jarak dari atas sesuai posisi tombol */
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 60px;
         left: 0;
-        right: 0;
-        background-color: white; /* Tambahkan background untuk menu */
-        z-index: 1; /* Pastikan menu muncul di atas */
+        background-color: white;
+        z-index: 1;
     }
     .menu-toggle {
-        display: block; /* Tampilkan tombol menu */
+        display: block;
         font-size: 24px;
         position: absolute;
         top: 10px;
@@ -85,24 +94,183 @@
         cursor: pointer;
     }
     nav ul {
-        display: block; /* Tampilkan menu dalam satu kolom */
+        display: block;
         margin: 0;
         padding: 0;
-        text-align: center; /* Posisikan teks di tengah */
+        text-align: center;
     }
     nav ul li {
-        display: block; /* Atur item agar vertikal */
+        display: block;
         margin: 10px 0;
     }
     nav ul li a {
         display: block;
         padding: 12px;
-        text-align: center; /* Teks di tengah */
-        border-bottom: 1px solid #ddd; /* Garis bawah antar menu */
+        text-align: center;
+        border-bottom: 1px solid #ddd;
     }
 }
 
-/* CSS untuk toggle efek */
+/* Toggle Efek */
 nav.open {
-    display: block; /* Tampilkan navigasi saat toggle "open" */
+    display: block;
 }
+/* Posisi default untuk .scrol di layar besar */
+.scrol {
+    position: absolute; /* Tetap di pojok kanan atas */
+    right: 1px; /* Jarak dari tepi kanan */
+    top: 100px; /* Jarak dari tepi atas */
+    width: 50%; /* Lebar container full */
+}
+
+/* Penyesuaian untuk layar kecil (max-width: 768px) */
+@media (max-width: 768px) {
+    .scrol {
+        position: relative; /* Mengubah posisi menjadi relatif */
+        margin: 0 auto; /* Centering elemen */
+        top: 0; /* Hilangkan jarak dari atas */
+        right: 0; /* Hilangkan jarak dari kanan */
+        left: 0; /* Tidak ada jarak dari kiri */
+        width: 100% ;
+    }
+}
+
+/* Penyesuaian untuk layar yang lebih kecil lagi (max-width: 480px) */
+@media (max-width: 480px) {
+    .scrol {
+        position: static; /* Gunakan posisi default */
+        margin-top: 20px; /* Tambahkan jarak dari atas */
+        text-align: center; /* Posisikan elemen di tengah */
+    }
+}
+
+.wraper1, .wraper2, .wraper3 {
+    width: 100%; /* Lebar container full */
+    max-width: 1536px;
+    margin: 5px;
+    position: relative; 
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Styling Elemen Item */
+.item {
+    width: 150px;
+    height: 100px;
+    background: red;
+    margin: 1px;
+    border-radius: 6px;
+    position: absolute;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}
+.item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+  
+}
+
+/* Animasi Scroll */
+@keyframes scrolleft {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -200px;
+    }
+}
+@keyframes scrlolright {
+    from {
+        right: 100%;
+    }
+    to {
+        right: -200px;
+    }
+}
+
+.wraper1 .item {
+    left: 100%;
+    animation-name: scrolleft;
+}
+.wraper2 .item {
+    right: 100%;
+    animation-name: scrlolright;
+}
+.wraper3 .item {
+    left: 100%;
+    animation-name: scrolleft;
+}
+
+/* Atur delay agar item bergerak dengan interval yang konsisten */
+.item1 { animation-delay: 0s; background-color: aqua; }
+.item2 { animation-delay: calc(30s / 8 * 1); background-color: blue; }
+.item3 { animation-delay: calc(30s / 8 * 2); background-color: brown; }
+.item4 { animation-delay: calc(30s / 8 * 3); }
+.item5 { animation-delay: calc(30s / 8 * 4); }
+.item6 { animation-delay: calc(30s / 8 * 5); }
+.item7 { animation-delay: calc(30s / 8 * 6); }
+.item8 { animation-delay: calc(30s / 8 * 7); }
+
+/* Media Query untuk Responsive */
+@media (max-width: 430px) {
+    .item {
+        width: 75px;
+        height: 70px;
+    }
+    .wraper1, .wraper2, .wraper3 {
+        height: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+    .item {
+        width: 70px;
+        height: 60px;
+    }
+    .wraper1, .wraper2, .wraper3 {
+        height: 60px;
+    }
+   
+}
+.background1{
+    background-color: rgb(31, 28, 28);
+    width: 75%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1; /* Posisi di belakang elemen lain */
+    position: fixed; /* Mengunci posisi background agar selalu ada di belakang */
+
+    
+   
+    
+}
+
+.background {
+    background-color: rgb(151, 140, 140);
+    top: 0; /* Jarak dari tepi atas */
+    right: 0; /* Jarak dari tepi kanan */
+    width: 25%; /* Lebar 100% */
+    height: 100%; /* Tinggi 100% */
+    z-index: -1; /* Posisi di belakang elemen lain */
+    position: fixed; /* Mengunci posisi background agar selalu ada di belakang */
+
+}
+
+.home{
+    position: fixed ;
+    bottom: 150px;
+    left: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+
+}
+
