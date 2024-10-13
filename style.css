@@ -1,11 +1,18 @@
-/* Styling default */
+Styling default
 *::before, *::after {
     box-sizing: border-box;
+   
+    
 }
 * {
     margin: 0;
     padding: 0;
+   
 }
+body{
+    background-color:  rgb(231, 212, 181);;
+}
+
 
 /* Styling Header */
 header {
@@ -21,7 +28,7 @@ header {
     line-height: 1;
     margin-top: 100px;
     gap: 1rem;
-    color: #ffffff ;
+    color: rgb(253, 252, 233);
 }
 
 /* Responsive Logo */
@@ -42,7 +49,14 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 10px;
+    height: 4rem;
+    background-color: rgb(152, 117, 85);
+    width: 45%;
+    display: flex;
+    justify-items: start;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: -5px 15px 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kiri */
 }
 
 nav ul {
@@ -58,13 +72,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(17, 13, 13);
     font-size: 18px;
     padding: 8px 16px;
 }
 
 nav ul li a:hover {
-    background-color: rgb(19, 18, 18);
+    background-color: rgb(210, 180, 140);
     border-radius: 4px;
 }
 
@@ -73,209 +87,91 @@ nav ul li a:hover {
     display: none;
 }
 
-@media (max-width: 768px) {
-    nav {
-        display: none;
-        position: absolute;
-        width: 100%;
-        top: 60px;
-        left: 0;
-        background-color: white;
-        z-index: 1;
-    }
-    .menu-toggle {
-        display: block;
-        font-size: 24px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-    nav ul {
-        display: block;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-    nav ul li a {
-        display: block;
-        padding: 12px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
-}
+/* Mobile-specific styles */
 
 /* Toggle Efek */
 nav.open {
     display: block;
 }
 /* Posisi default untuk .scrol di layar besar */
-.scrol {
-    position: absolute; /* Tetap di pojok kanan atas */
-    right: 1px; /* Jarak dari tepi kanan */
-    top: 100px; /* Jarak dari tepi atas */
-    width: 50%; /* Lebar container full */
-}
 
-/* Penyesuaian untuk layar kecil (max-width: 768px) */
-@media (max-width: 768px) {
-    .scrol {
-        position: relative; /* Mengubah posisi menjadi relatif */
-        margin: 0 auto; /* Centering elemen */
-        top: 0; /* Hilangkan jarak dari atas */
-        right: 0; /* Hilangkan jarak dari kanan */
-        left: 0; /* Tidak ada jarak dari kiri */
-        width: 100% ;
-    }
-}
-
-/* Penyesuaian untuk layar yang lebih kecil lagi (max-width: 480px) */
-@media (max-width: 480px) {
-    .scrol {
-        position: static; /* Gunakan posisi default */
-        margin-top: 20px; /* Tambahkan jarak dari atas */
-        text-align: center; /* Posisikan elemen di tengah */
-    }
-}
-
-.wraper1, .wraper2, .wraper3 {
-    width: 100%; /* Lebar container full */
-    max-width: 1536px;
-    margin: 5px;
-    position: relative; 
-    height: 100px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
-}
-
-/* Styling Elemen Item */
-.item {
-    width: 150px;
-    height: 100px;
-    background: red;
-    margin: 1px;
-    border-radius: 6px;
-    position: absolute;
-    animation-duration: 30s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
-}
-.item img{
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
+.background1 {
+    background-color:#B99976;
+    width: 55%;
+    height: 100vh; /* Mengisi seluruh tinggi viewport */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Tetap di belakang elemen lainnya */
+    position: fixed; /* Mengunci posisi agar tetap di layar saat scroll */
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kanan */
   
 }
-
-/* Animasi Scroll */
-@keyframes scrolleft {
-    from {
-        left: 100%;
-    }
-    to {
-        left: -200px;
-    }
-}
-@keyframes scrlolright {
-    from {
-        right: 100%;
-    }
-    to {
-        right: -200px;
-    }
-}
-
-.wraper1 .item {
-    left: 100%;
-    animation-name: scrolleft;
-}
-.wraper2 .item {
-    right: 100%;
-    animation-name: scrlolright;
-}
-.wraper3 .item {
-    left: 100%;
-    animation-name: scrolleft;
-}
-
-/* Atur delay agar item bergerak dengan interval yang konsisten */
-.item1 { animation-delay: 0s; background-color: aqua; }
-.item2 { animation-delay: calc(30s / 8 * 1); background-color: blue; }
-.item3 { animation-delay: calc(30s / 8 * 2); background-color: brown; }
-.item4 { animation-delay: calc(30s / 8 * 3); }
-.item5 { animation-delay: calc(30s / 8 * 4); }
-.item6 { animation-delay: calc(30s / 8 * 5); }
-.item7 { animation-delay: calc(30s / 8 * 6); }
-.item8 { animation-delay: calc(30s / 8 * 7); }
-
-/* Media Query untuk Responsive */
-@media (max-width: 430px) {
-    .item {
-        width: 75px;
-        height: 70px;
-    }
-    .wraper1, .wraper2, .wraper3 {
-        height: 80px;
-    }
-}
-
-@media (max-width: 400px) {
-    .item {
-        width: 70px;
-        height: 60px;
-    }
-    .wraper1, .wraper2, .wraper3 {
-        height: 60px;
-    }
+.gambar1 img{
+    position: absolute;
+    top: 1px;
+    right: 1px;
    
 }
-.background1{
-    background-color: rgb(31, 28, 28);
-    width: 100%;
-    height: 80%;
-    left: 0;
-    bottom: 0;
-    z-index: -1; /* Posisi di belakang elemen lain */
-    position: fixed; /* Mengunci posisi background agar selalu ada di belakang */
-
-    
+.gambar2 img{
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
    
+}
+.gambar3 img{
+    position: absolute;
+    top: -10rem;
+    left: -11rem;
+   
+}
+.gambar4 img{
+    position: absolute;
+    bottom: -10rem;
+    left: -11rem;
     
 }
 
+.gambar5 img{
+    position: absolute;
+    bottom: 1rem;
+    right: -11rem;
+   
+}
 .background {
-    background-color: rgb(102, 102, 102);
-    width: 100%;
-    height: 80%;
-    left: 0;
+    background-color: #D2B48C;
+    width: 45%;
+    height: 100vh; 
     top: 0;
-    z-index: -1; /* Posisi di belakang elemen lain */
-    position: fixed; /* Mengunci posisi background agar selalu ada di belakang */
-
+    right: 0;
+    z-index: -1; 
+    position: fixed; 
+    box-shadow: -5px 0 15px rgba(109, 104, 104, 0.541); 
+}
+.background img{
+    width: 100%;
+    height: auto;
 }
 
-.overlay{
-    position: fixed ;
-    bottom: 150px;
-    left: 1px;
+
+.overlay {
+    width: 55rem;
+    background: rgba(223, 159, 64, 0.39);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    position: absolute;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    
+    bottom: 20px; /* Mengatur jarak dari bawah */
+    left: 50%; /* Mengatur elemen ke tengah secara horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Agar konten di dalam overlay juga berada di tengah */
+    text-align: center; /* Untuk mengatur teks agar rata tengah */
 }
-
 .overlay h2, p{
-    color: white;
+    color:rgb(253, 252, 233);
     text-align: center;
 }
+
+
 
