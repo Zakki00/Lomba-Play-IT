@@ -33,6 +33,7 @@ header {
     width: 100%;
     height: auto;
 }
+
 .image-container img {
     width: auto;
 }
@@ -125,61 +126,47 @@ nav.open {
 }
 
 /* Container Styling */
-.container {
+.container, .container1, .container2 {
     display: flex;
     gap: 40px;
     align-items: flex-start;
     padding: 40px;
-    max-width: 1050px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 20px auto;
     background: rgba(100, 100, 100, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 100px;
-    z-index: 1;
-    left: 15px;
-    top: 80px;
     height: auto;
- 
-}
-.container1 {
-    display: flex;
-    gap: 40px;
-    flex-direction: column;
-    padding: 40px;
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(100, 100, 100, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 100px;
-    right: 30px;
-    bottom: 54px;
-    height: auto; /* Tambahkan height untuk mengontrol ukuran */
-}
-.container2 {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    padding: 40px;
-    max-width: 60rem;
-    margin: 0 auto;
-    background: rgba(100, 100, 100, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 10px;
-    top: 570px;
-    height: auto; 
+    flex-wrap: wrap; /* Agar konten otomatis menyesuaikan di layar kecil */
 }
 
+/* Responsive Layout */
+@media (max-width: 600px) {
+    .container, .container1, .container2 {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
 
+    .tari_remo img {
+        max-width: 100%;
+        height: auto;
+    }
 
+    .info {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .judul h2 {
+        font-size: 24px;
+    }
+
+    .penjelasan p {
+        font-size: 16px;
+    }
+}
 
 /* Gambar Tari Remo */
 .tari_remo img {
@@ -190,17 +177,13 @@ nav.open {
     object-fit: cover;
 }
 
-
-
 /* Info Section Styling */
 .info {
     max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-   
 }
-
 
 .judul h2 {
     font-size: 28px;
@@ -215,29 +198,3 @@ nav.open {
     text-align: justify;
     color: #ffffff; 
 }
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .tari_remo img {
-        max-width: 300px;
-    }
-
-    .info {
-        text-align: center;
-    }
-
-    .judul h2 {
-        font-size: 24px;
-    }
-
-    .penjelasan p {
-        font-size: 16px;
-    }
-}
-

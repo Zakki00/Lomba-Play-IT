@@ -1,0 +1,280 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto; /* Tambahkan scroll vertikal */
+}
+
+.team-container {
+    display: grid;
+    justify-items: center; /* Elemen akan berada dalam satu baris horizontal */
+    gap: 30px; /* Spasi antar elemen */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 300rem; /* Maksimal lebar untuk grid */
+    position: absolute; 
+  
+   
+}
+.team-box {
+    width: 540px;  /* Lebar yang lebih besar untuk landscape */
+    height: 300px; /* Tinggi yang lebih besar */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    cursor: pointer;
+    transition: width 0.4s ease, box-shadow 0.3s ease, height 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-box:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-box h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.team-box .details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    margin-top: 15px;
+    opacity: 0;
+}
+
+.team-box.expanded .details {
+    max-height: 150px; /* Sesuaikan tinggi ini dengan isi konten */
+    opacity: 1;
+}
+
+.details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.team-box.expanded {
+    height: 800px; /* Tinggi bertambah saat diklik */
+}
+
+.team-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 12px;
+}
+
+.team-box:hover::before {
+    opacity: 0.2;
+}
+@media (max-width: 600px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Ubah dari center ke flex-start untuk memulai dari atas */
+        height: 100vh;
+        margin-top: 5rem;
+        overflow-y: auto; /* Tambahkan scroll vertikal */
+    }
+    
+    /* Atur elemen grid menjadi vertikal saat di layar kecil */
+    .team-container {
+        display: flex;
+        flex-direction: column; /* Ubah arah elemen menjadi vertikal */
+        align-items: center; /* Pusatkan elemen secara horizontal */
+    }
+
+    .team-box {
+        width: 90%;  /* Lebar kotak lebih besar untuk tampilan mobile */
+        height: 20vh; /* Tinggi akan menyesuaikan konten */
+    }
+    .team-box.expanded {
+        height: 400px; /* Tinggi bertambah saat diklik */
+    }
+    .team-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        z-index: -1;
+        transition: opacity 0.8s ease;
+        opacity: 0;
+        border-radius: 12px;
+    }
+    .team-box:hover::before {
+        opacity: 0.5;
+    }
+    
+}
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(185, 159, 80, 0.671);
+    padding: 10px 20px;
+    width: 45%; /* Untuk tampilan desktop */
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+    border-radius: 8px;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+}
+.nav-links li::before {
+    background-color: #f0a500; /* Warna background hover (emas/oranye) */
+}
+
+
+.toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+/* Menata menu link secara umum */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    position: relative; /* Diperlukan untuk pseudo-elemen */
+    transition: color 0.3s ease; /* Peralihan warna teks */
+}
+
+/* Hover efek pada link */
+.nav-links a:hover {
+    color: #2e2b25; /* Warna teks berubah saat hover */
+}
+
+/* Efek latar belakang pada hover */
+.nav-links li::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 0%;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: #f0a500; /* Warna background hover */
+    transition: width 0.4s ease;
+    z-index: -1; /* Agar latar belakang berada di belakang teks */
+}
+
+/* Hover efek background animasi */
+.nav-links li:hover::before {
+    width: 100%; /* Mengisi seluruh lebar saat di hover */
+}
+
+/* Transisi hover pada link */
+.nav-links li {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Efek pergerakan */
+}
+
+.nav-links li:hover {
+    transform: translateY(-5px); /* Sedikit efek naik saat di hover */
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%; /* Lebar penuh di mobile */
+        padding: 10px; /* Sedikit padding untuk kenyamanan */
+        justify-content: space-between; /* Pastikan logo dan toggle sebaris */
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* Menu vertikal */
+        align-items: center; /* Pastikan menu berada di tengah */
+        width: 100%;
+        height: 30vh; /* Tinggi layar penuh untuk menu */
+        position: absolute;
+        top: 60px; /* Posisi tepat di bawah navbar */
+        left: 0;
+        background-color: #8a6f6f75;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(-10px);
+        z-index: 999;
+    }
+    .nav-links li::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        width: 0%;
+        left: 0;
+        height: 4rem;
+        border-radius: 10px;
+        background-color: #f0a500; /* Warna background hover */
+        transition: width 0.4s ease;
+        z-index: -1; /* Agar latar belakang berada di belakang teks */
+    }
+    
+    .nav-links.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0; /* Margin vertikal agar item rapi */
+        text-align: center;
+    }
+
+    .toggle {
+        display: block;
+        z-index: 1001;
+        position: relative;
+    }
+}
