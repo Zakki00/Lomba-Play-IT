@@ -217,6 +217,7 @@ body {
         margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
     }}
 @media (max-width: 600px) {
+
     nav {
         flex-wrap: wrap;
         position: fixed;
@@ -338,30 +339,12 @@ body {
     }
 }
 
-@media only screen and (min-width: 769px) {
-    nav ul {
-        flex-direction: row;
-        gap: 2rem;
-        position: static; /* Pastikan posisi tetap */
-        opacity: 1; /* Tampilkan elemen */
-        visibility: visible; /* Pastikan menu terlihat */
-    }
-    
-    nav ul li {
-        opacity: 1;
-        transform: translateY(0);
-        margin: 0; /* Buang margin vertikal yang ditambahkan pada mobile */
-    }
 
-    .menu-icon {
-        display: none; /* Sembunyikan ikon menu di desktop */
-    }
-}
 
 
 
 nav {
-    background-color:  #D2B48C;
+    background-color: rgb(227, 181, 106);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -382,6 +365,10 @@ nav ul {
     list-style: none;
 }
 
+nav div img {
+    width: 50px;
+    border-radius: 50%;
+}
 
 nav ul li {
     opacity: 0;
@@ -391,7 +378,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #191919;
+    color: rgb(118, 59, 41);
     font-weight: 600;
     padding: 8px 0;
     border-bottom: 1px solid rgba(255, 68, 0, 0);
@@ -399,8 +386,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgb(240, 240, 240);
-    border-bottom: 1px solid rgb(155, 150, 149);
+    color: rgb(5, 4, 4);
+    border-bottom: 1px solid rgb(94, 88, 86);
 }
 
 .menu-icon {
@@ -411,23 +398,33 @@ nav ul li a:hover {
 
 main {
     padding-top: 7rem;
-    color: #fff;
+    color: #4e1616;
     text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 600px) {
     nav {
-        flex-wrap: wrap;
-        position: fixed;
-        width: 100%;
-        top: 0;
+        background-color: rgb(227, 181, 106);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: absolute;
         z-index: 100;
+        top:0;
+        width: 100%;
+        right: 0;
+        
+        
     }
+    
 
     nav ul {
         flex-direction: column;
         width: 100%;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.5); /* Transparansi warna latar belakang */
+        backdrop-filter: blur(10px); /* Memburamkan latar belakang di belakang elemen */
         position: absolute;
         top: 60px;
         left: 0;
@@ -454,22 +451,22 @@ main {
 }
 
 /* Tambahkan aturan ini untuk menyesuaikan navbar di desktop */
-@media only screen and (min-width: 769px) {
-    nav ul {
+    @media(min-width: 600px) {
+     nav ul {
     flex-direction: row;
     gap: 2rem;
     position: static; /* Pastikan posisi tetap */
     opacity: 1; /* Tampilkan elemen */
     visibility: visible; /* Pastikan menu terlihat */
-}
-
-nav ul li {
+    }
+    
+    nav ul li {
     opacity: 1;
     transform: translateY(0);
     margin: 0; /* Buang margin vertikal yang ditambahkan pada mobile */
-}
-
-.menu-icon {
-display: none; /* Sembunyikan ikon menu di desktop */
-}
+    }
+    
+    .menu-icon {
+    display: none; /* Sembunyikan ikon menu di desktop */
+    }
 }
