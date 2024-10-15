@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Portofolio Budaya Tuban - Menampilkan kekayaan budaya Tuban melalui tarian tradisional, seni, dan kerajinan tangan.">
     <title>Portofolio Budaya Tuban</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+   
 
     </head>
 <body>
@@ -18,14 +20,18 @@
                 <div class="down" data-aos="slide-up"data-aos-delay="100" data-aos-duration="800" data-aos-once="true">Tuban</div>
             </h1>
         </div>
-        <button class="menu-toggle">☰</button> <!-- Hamburger menu icon -->
-        <nav data-aos="zoom-in"data-aos-delay="1100" data-aos-duration="900" data-aos-once="true">
-            <ul data-aos="slide-left"data-aos-delay="1100" data-aos-duration="1000" data-aos-once="true">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="budaya.html">Budaya</a></li>
-                <li><a href="#gallery">Galeri</a></li>
-                <li><a href="#contact">Kontak</a></li>
+        <!-- <button class="menu-toggle">☰</button>  -->
+        <nav data-aos="slide-right"data-aos-delay="300" data-aos-duration="2300" data-aos-once="true">
+            <div id="menu-icon" class="menu-icon">
+                <i class="ph-fill ph-list"></i>
+            </div>
+            <ul id="menu-list" data-aos="slide-left"data-aos-delay="300" data-aos-duration="2300" data-aos-once="true">
+                <li><a href="#" data-aos="zoom-in"data-aos-delay="300" data-aos-duration="2300" data-aos-once="true">Home</a></li>
+                <li><a href="#" data-aos="zoom-in"data-aos-delay="300" data-aos-duration="2300" data-aos-once="true">Budaya</a></li>
+                <li><a href="#" data-aos="zoom-in"data-aos-delay="300" data-aos-duration="2300" data-aos-once="true">About</a></li>
+                <li><a href="#" data-aos="zoom-in"data-aos-delay="300" data-aos-duration="2300" data-aos-once="true">Contact</a></li>
             </ul>
+        </nav>
         </nav>
     </header> 
     <div class="background1" data-aos="zoom-in"data-aos-delay="100" data-aos-duration="800" data-aos-once="true">
@@ -58,6 +64,7 @@
     </script>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     </body>
 
 </html>

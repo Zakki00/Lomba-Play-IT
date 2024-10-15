@@ -1,24 +1,19 @@
-// Menambahkan pesan selamat datang di bagian Home
-document.addEventListener("DOMContentLoaded", function() {
-    const homeSection = document.querySelector('#home');
-    const welcomeMessage = document.createElement('p');
-    welcomeMessage.textContent = "Temukan pesona budaya Tuban melalui keindahan seni dan tarian tradisional!";
-    homeSection.appendChild(welcomeMessage);
-});
+const menuIcon = document.getElementById("menu-icon");
+const menuList = document.getElementById("menu-list");
+const menuItems = menuList.querySelectorAll("li");
 
-// Contoh fungsi untuk mengubah konten secara dinamis
-function changeContent(sectionId, content) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.innerHTML = content;
+menuIcon.addEventListener("click", () => {
+    menuList.classList.toggle("active");
+    if (menuList.classList.contains("active")) {
+        menuItems.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        });
+    } else {
+        menuItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+        });
     }
-}
-// Seleksi elemen
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
-
-// Tambahkan event listener pada tombol menu
-menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('open'); // Toggle class 'open' untuk menampilkan/menyembunyikan navigasi
 });
-
