@@ -1,181 +1,307 @@
-    Styling default
-    *::before, *::after {
-        box-sizing: border-box;   
+Styling default
+*::before, *::after {
+    box-sizing: border-box;   
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:  rgb(231, 212, 181);;
+}
+
+
+/* Styling Header */
+header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    
+}
+
+/* Styling Logo */
+.logo {
+    display: flex;
+    font-size: 8rem;
+    line-height: 1;
+    margin-top: 100px;
+    gap: 1rem;
+    color: rgb(253, 252, 233);
+}
+
+
+
+/* Styling Menu Navigasi */
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 4rem;
+    background-color: rgb(152, 117, 85);
+    width: 45%;
+    display: flex;
+    justify-items: start;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: -5px 15px 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kiri */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(17, 13, 13);
+    font-size: 18px;
+    padding: 8px 16px;
+}
+
+nav ul li a:hover {
+    background-color: rgb(210, 180, 140);
+    border-radius: 4px;
+}
+
+/* Responsive Menu */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile-specific styles */
+
+/* Toggle Efek */
+nav.open {
+    display: block;
+}
+/* Posisi default untuk .scrol di layar besar */
+
+.background1 {
+    background-color:#B99976;
+    width: 55%;
+    height: 100vh; /* Mengisi seluruh tinggi viewport */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Tetap di belakang elemen lainnya */
+    position: absolute;  
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kanan */
+    overflow: hidden;
+
+}
+.gambar1 img{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+
+}
+.gambar2 img{
+    position: absolute;
+    top: 30rem;
+    left: 12px;
+    bottom: 8rem;
+
+}
+.gambar3 img{
+    position: absolute;
+    top: -10rem;
+    left: -11rem;
+
+}
+.gambar4 img{
+    position: absolute;
+    top: 45rem;
+    left: -11rem;
+    
+}
+
+.gambar5 img{
+    position: absolute;
+    top: 38rem;
+    right: -11rem;
+
+}
+.background {
+    background-color: #D2B48C;
+    width: 45%;
+    height: 100vh; 
+    top: 0;
+    right: 0;
+    z-index: -1; 
+    position: absolute; 
+    box-shadow: -5px 0 15px rgba(109, 104, 104, 0.541); 
+    overflow: hidden;
+}
+.background img{
+    width: 100%;
+    height: auto;
+}
+
+
+.overlay {
+    background: rgba(223, 159, 64, 0.39);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    width: 90%; 
+    font-size: 20px; 
+    position: absolute;
+    top: 51rem;
+    right: 1.7rem;
+    transform: translateY(50%); 
+    padding: 10px; 
+    border-radius: 10px;
+
+
+}
+.overlay h2, p{
+    color:rgb(253, 252, 233);
+    text-align: center;
+}
+    
+/* break point */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 5rem;
+        left: 0;
+    }}
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 4rem;
     }
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    body{
-        background-color:  rgb(231, 212, 181);;
-    }
+}
 
-
-    /* Styling Header */
-    header {
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        
-    }
-
-    /* Styling Logo */
-    .logo {
-        display: flex;
-        font-size: 8rem;
-        line-height: 1;
-        margin-top: 100px;
-        gap: 1rem;
-        color: rgb(253, 252, 233);
-    }
-
-
-
-    /* Styling Menu Navigasi */
+@media (max-width: 768px) {
+*{
+    width: 100%;
+}
     nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #fdd10e;
         position: absolute;
         top: 0;
         right: 0;
-        height: 4rem;
-        background-color: rgb(152, 117, 85);
-        width: 45%;
-        display: flex;
-        justify-items: start;
-        justify-content: flex-start;
-        align-items: center;
-        box-shadow: -5px 15px 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kiri */
     }
 
     nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+        display: block;
+        text-align: center;
     }
 
     nav ul li {
-        display: inline-block;
-        margin-left: 15px;
+        margin: 10px 0;
     }
 
     nav ul li a {
-        text-decoration: none;
-        color: rgb(17, 13, 13);
-        font-size: 18px;
-        padding: 8px 16px;
-    }
-
-    nav ul li a:hover {
-        background-color: rgb(210, 180, 140);
-        border-radius: 4px;
-    }
-
-    /* Responsive Menu */
-    .menu-toggle {
-        display: none;
-    }
-
-    /* Mobile-specific styles */
-
-    /* Toggle Efek */
-    nav.open {
         display: block;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
     }
-    /* Posisi default untuk .scrol di layar besar */
+    .overlay {
+        width: 90%; 
+        font-size: 16px; 
+        position: absolute;
+        top: 30rem;
+        left: 3%; 
+        transform: translateY(50%); 
+        padding: 10px; 
+        border-radius: 10px;
+    }
+
+    .overlay h2, .overlay p {
+    font-size: 18px; /* Sesuaikan ukuran teks */
+    }
+
+    .background {
+        width: 200%; /* Ubah width agar memenuhi seluruh layar pada layar kecil */
+        height: 65%; 
+        box-shadow: 4px 10px 19px rgba(0, 0, 0, 0.541); 
+    
+    }
+    .background1, .background {
+        width: 100%; 
+        position: absolute;
+    }
 
     .background1 {
-        background-color:#B99976;
-        width: 55%;
-        height: 100vh; /* Mengisi seluruh tinggi viewport */
-        top: 0;
-        left: 0;
-        z-index: -1; /* Tetap di belakang elemen lainnya */
-        position: absolute;  
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kanan */
-        overflow: hidden;
+        order: 1;
+        box-shadow: none;
+        top: 65%;
+        bottom: 1px;
+        height: 35%;
+        position: absolute;
+        width: 100%;
+        overflow: hidden; /* Konten yang meluap akan disembunyikan */
+    }
     
+
+    /* Mengatur gambar di dalam .background1 dan .background agar responsif */
+    .background img{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .background1 img {
+        width: 70%;
+        height: auto;
     }
     .gambar1 img{
         position: absolute;
-        top: 1px;
-        right: 1px;
+        top: -3rem;
+        right: -8rem;
     
     }
     .gambar2 img{
         position: absolute;
-        top: 30rem;
-        left: 12px;
-        bottom: 8rem;
+        top: 4rem;
+        left: 3rem;
     
     }
     .gambar3 img{
         position: absolute;
-        top: -10rem;
-        left: -11rem;
+        top: -4rem;
+        left: -7rem;
     
     }
     .gambar4 img{
         position: absolute;
-        top: 45rem;
-        left: -11rem;
+        top:10rem;
+        left: -5rem;
         
     }
-
+    
     .gambar5 img{
         position: absolute;
-        top: 38rem;
-        right: -11rem;
+        top: 10rem;
+        right: -8rem;
     
     }
-    .background {
-        background-color: #D2B48C;
-        width: 45%;
-        height: 100vh; 
-        top: 0;
-        right: 0;
-        z-index: -1; 
-        position: absolute; 
-        box-shadow: -5px 0 15px rgba(109, 104, 104, 0.541); 
-        overflow: hidden;
-    }
-    .background img{
-        width: 100%;
-        height: auto;
-    }
-
-
-    .overlay {
-        background: rgba(223, 159, 64, 0.39);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        font-family: 'Poppins', sans-serif;
-        width: 90%; 
-        font-size: 20px; 
-        position: absolute;
-        top: 51rem;
-        right: 1.7rem;
-        transform: translateY(50%); 
-        padding: 10px; 
-        border-radius: 10px;
-
     
-    }
-    .overlay h2, p{
-        color:rgb(253, 252, 233);
-        text-align: center;
-    }
-        
-    /* break point */
-    @media (max-width: 768px) {
-        .logo h1 {
-            font-size: 5rem;
-            left: 0;
-        }}
-    @media (max-width: 480px) {
-        .logo h1 {
-            font-size: 4rem;
-        }
-    }
 
-    @media (max-width: 768px) {
+    /* Menyusun gambar-gambar di dalam background1 */
+    .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
+        margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
+    }
+}
+@media (max-width: 600px) {
     *{
         width: 100%;
     }
@@ -185,7 +311,7 @@
             width: 100%;
             top: 60px;
             left: 0;
-            background-color: #fff;
+            background-color: rgb(39, 38, 38);
             z-index: 1;
         }
 
@@ -195,10 +321,10 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: #fdd10e;
+            color: #11100d;
             position: absolute;
             top: 0;
-            right: 0;
+            right: 1px;
         }
 
         nav ul {
@@ -219,7 +345,7 @@
             width: 90%; 
             font-size: 16px; 
             position: absolute;
-            top: 30rem;
+            top: 23rem;
             left: 3%; 
             transform: translateY(50%); 
             padding: 10px; 
@@ -300,132 +426,6 @@
         .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
             margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
         }
-    }
-    @media (max-width: 600px) {
-        *{
-            width: 100%;
-        }
-            nav {
-                display: none;
-                position: absolute;
-                width: 100%;
-                top: 60px;
-                left: 0;
-                background-color: #fff;
-                z-index: 1;
-            }
-    
-            .menu-toggle {
-                display: block;
-                font-size: 24px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                color: #fdd10e;
-                position: absolute;
-                top: 0;
-                right: 0;
-            }
-    
-            nav ul {
-                display: block;
-                text-align: center;
-            }
-    
-            nav ul li {
-                margin: 10px 0;
-            }
-    
-            nav ul li a {
-                display: block;
-                padding: 12px;
-                border-bottom: 1px solid #ddd;
-            }
-            .overlay {
-                width: 90%; 
-                font-size: 16px; 
-                position: absolute;
-                top: 25rem;
-                left: 3%; 
-                transform: translateY(50%); 
-                padding: 10px; 
-                border-radius: 10px;
-            }
-    
-            .overlay h2, .overlay p {
-            font-size: 18px; /* Sesuaikan ukuran teks */
-            }
-    
-            .background {
-                width: 200%; /* Ubah width agar memenuhi seluruh layar pada layar kecil */
-                height: 65%; 
-                box-shadow: 4px 10px 19px rgba(0, 0, 0, 0.541); 
-            
-            }
-            .background1, .background {
-                width: 100%; 
-                position: absolute;
-            }
-    
-            .background1 {
-                order: 1;
-                box-shadow: none;
-                top: 65%;
-                bottom: 1px;
-                height: 35%;
-                position: absolute;
-                width: 100%;
-                overflow: hidden; /* Konten yang meluap akan disembunyikan */
-            }
-            
-    
-            /* Mengatur gambar di dalam .background1 dan .background agar responsif */
-            .background img{
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .background1 img {
-                width: 70%;
-                height: auto;
-            }
-            .gambar1 img{
-                position: absolute;
-                top: -3rem;
-                right: -8rem;
-            
-            }
-            .gambar2 img{
-                position: absolute;
-                top: 4rem;
-                left: 3rem;
-            
-            }
-            .gambar3 img{
-                position: absolute;
-                top: -4rem;
-                left: -7rem;
-            
-            }
-            .gambar4 img{
-                position: absolute;
-                top:10rem;
-                left: -5rem;
-                
-            }
-            
-            .gambar5 img{
-                position: absolute;
-                top: 10rem;
-                right: -8rem;
-            
-            }
-            
-    
-            /* Menyusun gambar-gambar di dalam background1 */
-            .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
-                margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
-            }
-    }
+}
 
 
