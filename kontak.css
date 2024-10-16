@@ -260,7 +260,7 @@ body{
         display: flex;
         flex-direction: column; /* Menu vertikal */
         align-items: center; /* Pastikan menu berada di tengah */
-        height: 35vh; /* Tinggi layar penuh untuk menu */
+        height: 45vh; /* Tinggi layar penuh untuk menu */
         position: absolute;
         top: 60px; /* Posisi tepat di bawah navbar */
         left: 0;
