@@ -1,3 +1,10 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f2f5;
@@ -132,6 +139,15 @@ body {
 }
 
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color:  rgb(231, 212, 181);;
+}
 
 
 .navbar {
@@ -150,10 +166,6 @@ body {
     border-radius: 8px;
 }
 
-.navbar .logo {
-    color: white;
-    font-size: 24px;
-}
 
 .nav-links {
     list-style: none;
@@ -243,7 +255,7 @@ body {
         position: absolute;
         top: 60px; /* Posisi tepat di bawah navbar */
         left: 0;
-        background-color: #8a6f6f75;
+        background-color: #000000b4;
         opacity: 0;
         transition: opacity 0.5s ease, transform 0.5s ease;
         transform: translateY(-10px);
@@ -262,11 +274,24 @@ body {
         z-index: -1; /* Agar latar belakang berada di belakang teks */
     }
     
+    
+    
+    .nav-links {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    }
+    
     .nav-links.active {
+        max-height: 500px; /* Sesuaikan dengan tinggi maksimal elemen menu */
         opacity: 1;
+        visibility: visible;
         transform: translateY(0);
     }
-
+    
     .nav-links li {
         margin: 1.5rem 0; /* Margin vertikal agar item rapi */
         text-align: center;

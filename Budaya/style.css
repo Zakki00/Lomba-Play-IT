@@ -6,6 +6,12 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Atur overflow untuk menghindari geser kanan kiri */
+body {
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
 }
 
 /* Styling Header */
@@ -20,6 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Pastikan header melebar sesuai layar */
 }
 
 /* Logo Styling */
@@ -51,104 +58,374 @@ header {
     }
 }
 
-/* Styling Menu Navigasi */
-nav {
-    position: relative;
-}
 
-nav ul {
-    list-style-type: none;
+.navbar {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(185, 159, 80, 0.671);
+    padding: 10px 20px;
+    width: 45%; /* Untuk tampilan desktop */
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+    border-radius: 8px;
 }
 
-nav ul li {
-    display: inline-block;
+.navbar .logo {
+    color: white;
+    font-size: 24px;
 }
 
-nav ul li a {
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
     text-decoration: none;
-    color: #000;
-    font-size: 18px;
-    padding: 8px 16px;
-    transition: background-color 0.3s ease;
+    padding: 8px 15px;
+}
+.nav-links li::before {
+    background-color: #f0a500; /* Warna background hover (emas/oranye) */
 }
 
-nav ul li a:hover {
-    color: #fff;
-    background-color: #535353;
-    border-radius: 5px;
-}
 
-/* Responsive Menu */
-.menu-toggle {
+.toggle {
     display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
+/* Menata menu link secara umum */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    position: relative; /* Diperlukan untuk pseudo-elemen */
+    transition: color 0.3s ease; /* Peralihan warna teks */
+}
+
+/* Hover efek pada link */
+.nav-links a:hover {
+    color: #2e2b25; /* Warna teks berubah saat hover */
+}
+
+/* Efek latar belakang pada hover */
+.nav-links li::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 0%;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: #f0a500; /* Warna background hover */
+    transition: width 0.4s ease;
+    z-index: -1; /* Agar latar belakang berada di belakang teks */
+}
+
+/* Hover efek background animasi */
+.nav-links li:hover::before {
+    width: 100%; /* Mengisi seluruh lebar saat di hover */
+}
+
+/* Transisi hover pada link */
+.nav-links li {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Efek pergerakan */
+}
+
+.nav-links li:hover {
+    transform: translateY(-5px); /* Sedikit efek naik saat di hover */
+}
+
 
 @media (max-width: 768px) {
-    nav {
-        display: none;
-        position: absolute;
+    .navbar {
+        width: 100%; /* Lebar penuh di mobile */
+        padding: 10px; /* Sedikit padding untuk kenyamanan */
+        justify-content: space-between; /* Pastikan logo dan toggle sebaris */
+        font-size: 20px;
+    }
+    .nav-links li {
+        width: 100%; /* Mengatur lebar li menjadi penuh */
+        display: block; /* Mengubah elemen li menjadi block */
+        margin: 0; /* Hilangkan margin untuk merapatkan */
+        text-align: center; /* Memastikan teks berada di tengah */
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* Menu vertikal */
+        align-items: center; /* Pastikan menu berada di tengah */
         width: 100%;
-        top: 60px;
+        height: 30vh; /* Tinggi layar penuh untuk menu */
+        position: absolute;
+        top: 60px; /* Posisi tepat di bawah navbar */
         left: 0;
-        background-color: #fff;
-        z-index: 1;
+        background-color: #8a6f6f75;
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(-10px);
+        z-index: 999;
     }
-
-    .menu-toggle {
-        display: block;
-        font-size: 24px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #000;
+    .nav-links li::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        width: 0%;
+        left: 0;
+        height: 4rem;
+        border-radius: 10px;
+        background-color: #f0a500; /* Warna background hover */
+        transition: width 0.4s ease;
+        z-index: -1; /* Agar latar belakang berada di belakang teks */
     }
-
-    nav ul {
-        display: block;
+    
+    .nav-links {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .nav-links.active {
+        max-height: 500px; /* Sesuaikan dengan tinggi maksimal elemen menu */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-links li {
+        margin: 1.5rem 0; /* Margin vertikal agar item rapi */
         text-align: center;
     }
 
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
+    .toggle {
         display: block;
-        padding: 12px;
-        border-bottom: 1px solid #ddd;
+        z-index: 1001;
+        position: relative;
     }
-}
-
-nav.open {
-    display: block;
 }
 
 /* Container Styling */
-.container, .container1, .container2 {
+.container {
+    top: 6rem;
+    left: 2rem;
+    position: absolute;
     display: flex;
     gap: 40px;
     align-items: flex-start;
     padding: 40px;
-    max-width: 100%;
+    width: 55%; /* Sesuaikan dengan lebar layar */
     margin: 20px auto;
     background: rgba(100, 100, 100, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    height: auto;
     flex-wrap: wrap; /* Agar konten otomatis menyesuaikan di layar kecil */
+    max-width: 100%; /* Hindari overflow */
+}
+.container1 {
+    position: absolute;
+    width: 45%; /* Sesuaikan dengan lebar layar */
+   display: flex;
+   bottom: 1rem;
+   left: 10rem;
+   gap: 40px;
+   align-items: flex-start;
+   padding: 40px;
+   background: rgba(100, 100, 100, 0.8);
+   border-radius: 15px;
+   margin-top: 20px;
+}
+.container2 {
+    position: absolute;
+    right: 2rem;
+    top: 7rem;
+    width: 30%; /* Sesuaikan dengan lebar layar */
+    height: 30rem;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 40px;
+    background: rgba(100, 100, 100, 0.8);
+    border-radius: 15px;
+  
+    margin-top: 20px;
 }
 
-/* Responsive Layout */
+/* Responsive Layout untuk Mobile */
 @media (max-width: 600px) {
-    .container, .container1, .container2 {
+    .container {
         flex-direction: column;
         align-items: center;
         padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .container1{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+        
+    }
+    .container2{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .tari_remo img {
+        max-width: 100%;
+        height: auto;
     }
 
+    .info {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .judul h2 {
+        font-size: 24px;
+    }
+
+    .penjelasan p {
+        font-size: 16px;
+    }
+}
+
+/* Gambar Tari Remo */
+.tari_remo img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Info Section Styling */
+.info {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.judul h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ece4e4;
+    margin-bottom: 20px;
+}
+
+.penjelasan p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    color: #ffffff; 
+}
+
+
+/* Container Styling */
+.container {
+    top: 6rem;
+    left: 2rem;
+    position: absolute;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 40px;
+    width: 55%; /* Sesuaikan dengan lebar layar */
+    margin: 20px auto;
+    background: rgba(100, 100, 100, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Agar konten otomatis menyesuaikan di layar kecil */
+    max-width: 100%; /* Hindari overflow */
+}
+.container1 {
+    position: absolute;
+    width: 45%; /* Sesuaikan dengan lebar layar */
+   display: flex;
+   bottom: 1rem;
+   left: 10rem;
+   gap: 40px;
+   align-items: flex-start;
+   padding: 40px;
+   background: rgba(100, 100, 100, 0.8);
+   border-radius: 15px;
+   margin-top: 20px;
+}
+.container2 {
+    position: absolute;
+    right: 2rem;
+    top: 7rem;
+    width: 30%; /* Sesuaikan dengan lebar layar */
+    height: 30rem;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 40px;
+    background: rgba(100, 100, 100, 0.8);
+    border-radius: 15px;
+  
+    margin-top: 20px;
+}
+
+/* Responsive Layout untuk Mobile */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .container1{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+        
+    }
+    .container2{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+    }
     .tari_remo img {
         max-width: 100%;
         height: auto;

@@ -2,10 +2,19 @@
 function toggleExpand(element) {
     element.classList.toggle('expanded');
 }
- 
-// script.js
-document.querySelector('.toggle').addEventListener('click', function() {
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector('.toggle');
     const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+
+    // Toggle menu navigasi dengan animasi
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Menutup menu ketika halaman berganti
+    window.addEventListener('beforeunload', () => {
+        navLinks.classList.remove('active');
+    });
 });
     
