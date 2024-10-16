@@ -165,10 +165,6 @@ body{
     border-radius: 8px;
 }
 
-.navbar .logo {
-    color: white;
-    font-size: 24px;
-}
 
 .nav-links {
     list-style: none;
@@ -214,7 +210,6 @@ body{
 /* Efek latar belakang pada hover */
 .nav-links li::before {
     content: '';
-    
     position: absolute;
     top: -5px;
     width: 0%;
@@ -248,12 +243,16 @@ body{
         padding: 10px; /* Sedikit padding untuk kenyamanan */
         justify-content: space-between; /* Pastikan logo dan toggle sebaris */
         font-size: 20px;
+        border-radius: 0 0 10px 10px;
+        background-color: #b9997600;
+        
     }
     .nav-links li {
         width: 100%; /* Mengatur lebar li menjadi penuh */
         display: block; /* Mengubah elemen li menjadi block */
         margin: 0; /* Hilangkan margin untuk merapatkan */
         text-align: center; /* Memastikan teks berada di tengah */
+        
     }
     .nav-links {
         width: 100%; 
@@ -262,10 +261,11 @@ body{
         align-items: center; /* Pastikan menu berada di tengah */
         height: 45vh; /* Tinggi layar penuh untuk menu */
         position: absolute;
-        top: 60px; /* Posisi tepat di bawah navbar */
+        top: 0; /* Posisi tepat di bawah navbar */
         left: 0;
         background-color: #000000b4;
         opacity: 0;
+        border-radius: 0 0 20px 20px;
         transition: opacity 0.5s ease, transform 0.5s ease;
         transform: translateY(-10px);
         z-index: 999;
@@ -275,11 +275,10 @@ body{
         width: 0%; /* Mengisi seluruh lebar saat di hover */
         position: absolute;
         top: -20px;
-
         left: 0;
         height: 4rem;
         border-radius: 10px;
-        background-color: #f0a500; /* Warna background hover */
+        background-color: #6d5a31; /* Warna background hover */
         transition: width 0.4s ease;
         z-index: -1; /* Agar latar belakang berada di belakang teks */
     }
@@ -310,7 +309,17 @@ body{
         z-index: 1001;
         position: relative;
     }
-}
+    
+        .container1 {
+            width: 100%; /* Lebar penuh untuk layar kecil */
+            height: 30%; /* Tinggi sesuai kebutuhan */
+            position: fixed; /* Tetap di posisi yang tetap */
+            bottom: 0; /* Posisikan di bagian bawah */
+            left: 0; /* Posisikan di kiri */
+            background-color: rgb(236, 159, 107); /* Warna background */
+        }
+    }
+
 
 @media(max-width:600px) {
     .menu-item {

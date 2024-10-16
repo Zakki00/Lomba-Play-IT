@@ -118,105 +118,11 @@ body {
 
 
 
-   
-@media (max-width: 600px) {
-
-    .menu-item {
-        width: 90%;
-        height: auto !important;
-    }
-    .overlay {
-        width: 90%;
-        font-size: 16px;
-        position: absolute;
-        top: 23rem;
-        left: 3%;
-        transform: translateY(50%);
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .overlay h2, .overlay p {
-        font-size: 18px; /* Sesuaikan ukuran teks */
-    }
-
-    .background {
-        width: 200%; /* Ubah width agar memenuhi seluruh layar pada layar kecil */
-        height: 65%;
-        box-shadow: 4px 10px 19px rgba(0, 0, 0, 0.541);
-    }
-
-    .background1, .background {
-        width: 100%;
-        position: absolute;
-    }
-
-    .background1 {
-        order: 1;
-        box-shadow: none;
-        top: 65%;
-        bottom: 1px;
-        height: 35%;
-        position: absolute;
-        width: 100%;
-        overflow: hidden; /* Konten yang meluap akan disembunyikan */
-    }
-
-    /* Mengatur gambar di dalam .background1 dan .background agar responsif */
-    .background img {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .background1 img {
-        width: 70%;
-        height: auto;
-    }
-
-    .gambar1 img {
-        position: absolute;
-        top: -3rem;
-        right: -8rem;
-    }
-
-    .gambar2 img {
-        position: absolute;
-        top: 4rem;
-        left: 3rem;
-    }
-
-    .gambar3 img {
-        position: absolute;
-        top: -4rem;
-        left: -7rem;
-    }
-
-    .gambar4 img {
-        position: absolute;
-        top: 10rem;
-        left: -5rem;
-    }
-
-    .gambar5 img {
-        position: absolute;
-        top: 10rem;
-        right: -8rem;
-    }
-
-    /* Menyusun gambar-gambar di dalam background1 */
-    .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
-        margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
-    }
-}
-
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(185, 159, 80, 0.671);
-    backdrop-filter: blur(10px);
     padding: 10px 20px;
     width: 45%; /* Untuk tampilan desktop */
     height: 4rem;
@@ -318,7 +224,7 @@ body {
        height: 10rem;
         width: 90%;
         font-size: 16px;
-        top: 90%; /* Posisi vertikal di tengah */
+        top: 80%; /* Posisi vertikal di tengah */
         transform: translate(-50%, -50%); /* Benar-benar di tengah */
         left: 50%; /* Posisi horizontal di tengah */
         padding: 10px;
@@ -326,6 +232,7 @@ body {
         text-align: center; /* Agar teks di dalamnya juga berada di tengah */
         background-color: rgba(236, 158, 107, 0.486);
         backdrop-filter: blur(15px);
+       
     }
 
     .overlay h2, .overlay p {
@@ -426,7 +333,8 @@ body {
         justify-content: space-between; /* Pastikan logo dan toggle sebaris */
         font-size: 20px;
         border-radius: 0 0 10px 10px;
-        backdrop-filter: blur(10px);
+        background-color: #b9997600;
+        
     }
     .nav-links li {
         width: 100%; /* Mengatur lebar li menjadi penuh */
@@ -442,9 +350,8 @@ body {
         align-items: center; /* Pastikan menu berada di tengah */
         height: 45vh; /* Tinggi layar penuh untuk menu */
         position: absolute;
-        top: 60px; /* Posisi tepat di bawah navbar */
+        top: 0; /* Posisi tepat di bawah navbar */
         left: 0;
-        backdrop-filter: blur(20px);
         background-color: #000000b4;
         opacity: 0;
         border-radius: 0 0 20px 20px;
@@ -460,7 +367,7 @@ body {
         left: 0;
         height: 4rem;
         border-radius: 10px;
-        background-color: #f0a500; /* Warna background hover */
+        background-color: #6d5a31; /* Warna background hover */
         transition: width 0.4s ease;
         z-index: -1; /* Agar latar belakang berada di belakang teks */
     }
