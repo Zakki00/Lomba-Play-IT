@@ -14,14 +14,15 @@ body{
 }
 
 .container1 {
-    width: 25%;
-    height: 100vh;
+    width: 100%;
+    height: 46%;
     background-color: rgb(236, 159, 107);
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
+    bottom: 0;
     z-index: -1; /* Pastikan container di belakang */
+    border-radius: 10px;
 }
 
 
@@ -198,7 +199,7 @@ body {
         display: flex;
         flex-direction: column; /* Menu vertikal */
         align-items: center; /* Pastikan menu berada di tengah */
-        height: 35vh; /* Tinggi layar penuh untuk menu */
+        height: 45vh; /* Tinggi layar penuh untuk menu */
         position: absolute;
         top: 60px; /* Posisi tepat di bawah navbar */
         left: 0;
@@ -213,7 +214,6 @@ body {
         width: 0%; /* Mengisi seluruh lebar saat di hover */
         position: absolute;
         top: -20px;
-
         left: 0;
         height: 4rem;
         border-radius: 10px;
@@ -248,7 +248,17 @@ body {
         z-index: 1001;
         position: relative;
     }
-}
+    
+        .container1 {
+            width: 100%; /* Lebar penuh untuk layar kecil */
+            height: 30%; /* Tinggi sesuai kebutuhan */
+            position: fixed; /* Tetap di posisi yang tetap */
+            bottom: 0; /* Posisikan di bagian bawah */
+            left: 0; /* Posisikan di kiri */
+            background-color: rgb(236, 159, 107); /* Warna background */
+        }
+    }
+
 
 @media(max-width:600px) {
     .menu-item {
