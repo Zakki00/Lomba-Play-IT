@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+    
+}
 /* Reset styling */
 *::before, *::after {
     box-sizing: border-box;
@@ -211,11 +224,6 @@ body {
        
     }
 
-
-
-
-
-
 /* Container Styling */
 .container,.container1, .container2 {
     padding: 40px;
@@ -260,51 +268,40 @@ body {
     text-align: justify;
     color: #ffffff; 
 }
+footer{
+    margin: 10rem;
+}
 
 
 /* Container Styling */
 .container {
-    top: 4rem;
-    left: 2rem;
-    position: absolute;
-    display: flex;
-    gap: 3px;
-    align-items: flex-start;
-    padding: 40px;
-    width: 75rem;
-    height: 50%; /* Sesuaikan dengan lebar layar */
-    background: rgba(100, 100, 100, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* Agar konten otomatis menyesuaikan di layar kecil */
-    max-width: 100%; /* Hindari overflow */
-}
-.container img{
-    width: 80%;
-    height: auto;
-
-}
-
-.container1 {
     position: absolute;
     flex-wrap: wrap; 
     display: flex;
-    bottom: 1rem;
-    align-items: center;
+    top: 1rem;
     left: 1rem;
     align-items: flex-start;
     padding: 40px;
     background: rgba(100, 100, 100, 0.8);
     border-radius: 15px;
     margin-top: 20px;
-    height: 45%;
-    top: 34rem;
-    margin-bottom: 30px; /* Memberi jarak 30px antara elemen dan bagian bawah */
-    padding: 20px; /* Jika perlu padding tambahan di dalam elemen */
+    height: auto; /* Tinggi otomatis */
+    overflow: auto; /* Menampilkan scroll jika konten melebihi */
 }
-.container1 img{
-    width: 80%;
+
+.container1 {
+    position: absolute;
+    flex-wrap: wrap; 
+    display: flex;
+    top: 50rem;
+    left: 1rem;
+    align-items: flex-start;
+    padding: 40px;
+    background: rgba(100, 100, 100, 0.8);
+    border-radius: 15px;
+    margin-top: 20px;
+    height: auto; /* Tinggi otomatis */
+    overflow: auto; /* Menampilkan scroll jika konten melebihi */
 }
 .container2 {
     position: absolute;
@@ -320,48 +317,14 @@ body {
     background: rgba(100, 100, 100, 0.8);
     border-radius: 15px;
     margin-top: 20px;
-    height: 50rem;
+    height: auto; /* Tinggi otomatis */
+    overflow: auto; /* Menampilkan scroll jika konten melebihi */
+
 }
-
-/* Responsive Layout untuk Mobile */
-@media (max-width: 600px) {
-    .container, .container1, .container2{
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        position: static;
-        max-width: 100%;
-        width: 90%;
-        margin-top: 20px;
-    }
-    .budaya img {
-        max-width: 100%;
-        height: auto;
-    }
-    .container img {
-        max-width: 100%;
-        width: 100%;
-    }
-    .container1 img {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .info {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .judul h2 {
-        font-size: 24px;
-    }
-
-    .penjelasan p {
-        font-size: 16px;
-    }
+.container1 img{
+    width: 80%;
+    height: auto;
 }
-
-
 
 .background1 {
     background-color:#B99976;
@@ -482,6 +445,243 @@ body {
     /* Menyusun gambar-gambar di dalam background1 */
     .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
         margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
+    }
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    .container, .container1, .container2 {
+        width: 90%; /* Lebar kontainer di mobile */
+        margin: 10px auto; /* Margin otomatis untuk pusat */
+        padding: 20px; /* Padding lebih kecil di mobile */
+    }
+
+    .container img, .container1 img, .container2 img {
+        width: 100%; /* Gambar lebar penuh di mobile */
+        height: auto; /* Tinggi otomatis */
+    }
+
+    .info {
+        text-align: center; /* Rata tengah untuk teks */
+    }
+
+    .judul h2 {
+        font-size: 24px; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .penjelasan p {
+        font-size: 16px; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .background1 {
+        height: auto; /* Sesuaikan tinggi latar belakang */
+    }
+}
+
+/* Responsive Layout untuk Mobile */
+@media (max-width: 600px) {
+    .container, .container1, .container2{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        position: static;
+        max-width: 100%;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .budaya img {
+        max-width: 100%;
+        height: auto;
+    }
+    .container img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .container1 img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .info {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .judul h2 {
+        font-size: 24px;
+    }
+
+    .penjelasan p {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries for Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container, .container1, .container2 {
+        width: 80%; /* Width of containers */
+        margin: 20px auto; /* Margin for containers */
+        padding: 30px; /* Padding for containers */
+    }
+
+    .container img, .container1 img, .container2 img {
+        width: 80%; /* Width of images */
+        height: auto; /* Height of images */
+    }
+
+    .info {
+        text-align: left; /* Text alignment for info */
+    }
+
+    .judul h2 {
+        font-size: 26px; /* Font size for title */
+    }
+
+    .penjelasan p {
+        font-size: 18px; /* Font size for description */
+    }
+
+    .background1 {
+        height: 100vh; /* Height of background */
+    }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    .container, .container1, .container2 {
+        flex-direction: column; /* Stack items vertically */
+        width: 90%; /* Width of containers on mobile */
+        padding: 15px; /* Adjust padding for mobile */
+        margin: 10px auto; /* Center the containers */
+    }
+
+    .container img, .container1 img, .container2 img {
+        width: 100%; /* Images take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container, .container1, .container2 {
+        flex-direction: row; /* Keep items in a row */
+        width: 80%; /* Width of containers on tablets */
+        margin: 20px auto; /* Center the containers */
+        padding: 20px; /* Adjust padding for tablets */
+    }
+
+    .container img, .container1 img, .container2 img {
+        width: 70%; /* Slightly smaller images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .info {
+        flex: 1; /* Allow info section to take available space */
+        padding-left: 15px; /* Space between image and text */
+    }
+}
+
+/* Media Queries for 340px */
+@media (max-width: 340px) {
+
+    .container, .container1, .container2 {
+        width: 95%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .judul h2 {
+        font-size: 20px;
+    }
+
+    .penjelasan p {
+        font-size: 14px;
+    }
+}
+
+/* Media Queries for 576px */
+@media (min-width: 341px) and (max-width: 576px) {
+   
+
+    .container, .container1, .container2 {
+        width: 90%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .judul h2 {
+        font-size: 22px;
+    }
+
+    .penjelasan p {
+        font-size: 15px;
+    }
+}
+
+/* Media Queries for 768px */
+@media (min-width: 577px) and (max-width: 768px) {
+    .container, .container1, .container2 {
+        width: 85%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .judul h2 {
+        font-size: 24px;
+    }
+
+    .penjelasan p {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries for 1023px */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .container, .container1, .container2 {
+        width: 80%;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    .judul h2 {
+        font-size: 26px;
+    }
+
+    .penjelasan p {
+        font-size: 18px;
+    }
+}
+
+/* Media Queries for 1152px */
+@media (min-width: 1024px) and (max-width: 1152px) {
+
+    .container, .container1, .container2 {
+        width: 75%;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    .judul h2 {
+        font-size: 28px;
+    }
+
+    .penjelasan p {
+        font-size: 19px;
+    }
+    .container, .container1, .container2 {
+        position: relative;
+        /* Other styles... */
+    }
+    
+    .container-wrapper {
+        display: flex;
+        flex-direction: row;
+        /* Other styles... */
+    }
+    
+    .container, .container1, .container2 {
+        flex: 1;
+        /* Other styles... */
     }
 }
 

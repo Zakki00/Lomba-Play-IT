@@ -42,29 +42,54 @@ header  {
     font-style: normal;
 }
 
-.overlay {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .overlay h2 {
-    font-size: 1.8rem;
-  }
-
-  .overlay p {
-    font-size: 1rem;
-  }
-/* Styling Logo */
-.logo {
-    display: flex;
-    font-size: 8rem;
-    line-height: 1;
-    margin-top: 100px;
-    gap: 1rem;
-    color: rgb(253, 252, 233);
+main{
+    max-width: max-content;
+    overflow: hidden;
+}
+.wrapper {
+    width: 100vw; /* Lebar sesuai ukuran layar */
+    height: 100vh; /* Tinggi sesuai ukuran layar */
+    position: relative; /* Posisi relatif untuk elemen anak */
+    overflow: hidden; /* Menyembunyikan bagian yang keluar dari pembungkus */
+}
+.oval {
+    width: 5000px; /* Lebar lingkaran */
+    height: 5000px; /* Tinggi lingkaran, harus sama dengan lebar */
+    background: linear-gradient(135deg, rgb(163, 91, 57), rgb(241, 241, 241)); /* Gradien latar belakang */
+    border-radius: 50%; /* Membuat bentuk lingkaran */
+    position: absolute;
+    overflow: hidden;
+    clip-path: circle(50); /* Memotong lingkaran sesuai ukuran layar */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.603); /* Bayangan untuk efek kedalaman */
+    animation: pulse 40s infinite; /* Menambahkan animasi */
 }
 
-
+/* Animasi untuk efek pulsasi */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Memperbesar sedikit */
+    }
+    100% {
+        transform: scale(1);
+    }
+}   
+@media (max-width: 600px) {
+    .wrapper {
+        width: 100vw; /* Lebar sesuai ukuran layar */
+        height: 100vh; /* Tinggi sesuai ukuran layar */
+        position: relative; /* Posisi relatif untuk elemen anak */
+        overflow: hidden; /* Menyembunyikan bagian yang keluar dari pembungkus */
+    }
+    .oval {
+        width: 1300px; /* Lebar lingkaran */
+        height: 1300px; /* Tinggi lingkaran, harus sama dengan lebar */
+        position: absolute;
+        bottom: -50rem;
+    }
+}
 body {
     background-color: #9a9a9a;
     font-family: "Segoe UI", sans-serif;
@@ -72,7 +97,7 @@ body {
 }
 .background1 {
     background-color:#B99976;
-    width: 55%;
+    width: 100%;
     height: 100vh; /* Mengisi seluruh tinggi viewport */
     top: 0;
     left: 0;
@@ -86,6 +111,7 @@ body {
     position: absolute;
     top: 1px;
     right: 1px;
+    z-index: 1;
 
 }
 .gambar2 img{
@@ -93,11 +119,14 @@ body {
     top: 30rem;
     left: 12px;
     bottom: 8rem;
+    z-index: 1;
+
 
 }
 .gambar3 img{
     position: absolute;
     top: -10rem;
+    z-index: 1;
     left: -11rem;
 
 }
@@ -105,6 +134,8 @@ body {
     position: absolute;
     top: 45rem;
     left: -11rem;
+    z-index: 1;
+
     
 }
 
@@ -112,6 +143,40 @@ body {
     position: absolute;
     top: 38rem;
     right: -11rem;
+    z-index: 1;
+
+
+}
+.gambar6 img{
+    position: absolute;
+    top: 8rem;
+    right: 40rem;
+    z-index: 1;
+
+
+}
+.gambar7 img{
+    position: absolute;
+    top: 30rem;
+    right: 20rem;
+    z-index: 1;
+
+
+}
+.gambar8 img{
+    position: absolute;
+    top: 40rem;
+    right: 60rem;
+    z-index: 20;
+
+
+}
+.gambar9 img{
+    position: absolute;
+    top: 10rem;
+    right: 70rem;
+    z-index: 20;
+
 
 }
 .background {
@@ -129,33 +194,61 @@ body {
     width: 100%;
     height: auto;
 }
-
+body {
+    margin: 0;
+    font-family: 'Garamond', serif; /* Menggunakan font yang memiliki nuansa klasik */
+    background-color: #f0e5d8; /* Warna latar belakang yang lembut */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mengisi tinggi viewport */
+}
 
 .overlay {
-    background: rgba(223, 159, 64, 0.39);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    font-family: 'Poppins', sans-serif;
-    width: 45%; 
-    font-size: 20px; 
+    background: linear-gradient(135deg, rgba(255, 223, 186, 0.9), rgba(255, 255, 255, 0.8)); /* Gradien latar belakang */
+    border-radius: 15px; /* Sudut membulat */
+    padding: 20px; /* Ruang di dalam overlay */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek kedalaman */
+    text-align: center; /* Memusatkan teks */
     position: absolute;
-    bottom: 5rem;
-    right: 0;
-    transform: translateY(50%); 
-    padding: 10px; 
-    border-radius: 10px;
-
-
+    top: 10rem;
+    left: 3rem;
+    z-index: 1;
 }
-.overlay h2, p{
-    color:rgb(253, 252, 233);
-    text-align: center;
+
+h2 {
+    font-size: 5rem; /* Ukuran font yang besar untuk judul */
+    color: #8B4513; /* Warna coklat yang hangat */
+    margin-bottom: 10px; /* Jarak bawah judul */
+    font-family: 'Papyrus', cursive; /* Font yang lebih artistik untuk judul */
+    font-weight: bold; /* Menebalkan teks judul */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Bayangan teks untuk efek kedalaman */
 }
-   
-/* break point */
 
+p {
+    font-size: 1.2em; /* Ukuran font yang lebih kecil untuk paragraf */
+    color: #555; /* Warna teks yang lebih gelap untuk kontras */
+    line-height: 1.5; /* Jarak antar baris */
+}
+.wayang {
+    position: absolute; /* Posisi absolut untuk penempatan */
+    bottom: 20px; /* Jarak dari bawah */
+    left: 20px; /* Jarak dari kiri */
+}
 
+.gb-wayang1 {
+    position: relative; /* Posisi relatif untuk elemen pertama */
+}
 
+.gb-wayang2 {
+    position: absolute; /* Posisi absolut untuk elemen kedua */
+    left: 20px; /* Menggeser ke kanan dari gb-wayang1 */
+    top: 20px; /* Menggeser ke bawah dari gb-wayang1 */
+}
+
+.wayang-img {
+    width: 250px; /* Atur lebar gambar lebih besar */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -259,22 +352,30 @@ body {
     }
 
     .overlay {
-       height: 10rem;
-        width: 90%;
-        font-size: 16px;
-        top: 80%; /* Posisi vertikal di tengah */
-        transform: translate(-50%, -50%); /* Benar-benar di tengah */
-        left: 50%; /* Posisi horizontal di tengah */
-        padding: 10px;
-        border-radius: 10px;
-        text-align: center; /* Agar teks di dalamnya juga berada di tengah */
-        background-color: rgba(236, 158, 107, 0.486);
-        backdrop-filter: blur(15px);
-       
+        width: 90%; /* Lebar responsif */
+        max-width: 600px; /* Lebar maksimum untuk tampilan yang lebih besar */
+        padding: 10px; /* Ruang di dalam overlay */
+        border-radius: 10px; /* Sudut membulat */
+        text-align: center; /* Memusatkan teks */
+        background-color: rgba(236, 158, 107, 0.486); /* Warna latar belakang */
+        backdrop-filter: blur(15px); /* Efek blur di belakang overlay */
+        position: absolute; /* Posisi absolut untuk penempatan */
+        top: 50%; /* Menempatkan overlay di tengah vertikal */
+        left: 50%; /* Menempatkan overlay di tengah horizontal */
+        transform: translate(-50%, -50%); /* Menggeser overlay ke tengah */
+        height: auto; /* Tinggi otomatis untuk menyesuaikan konten */
     }
-
-    .overlay h2, .overlay p {
-        font-size: 18px; /* Sesuaikan ukuran teks */
+    
+    .overlay h2 {
+        color: rgb(139, 69, 19); /* Warna teks judul */
+        text-align: center; /* Memusatkan teks judul */
+        font-size: 40px; /* Ukuran font judul */
+    }
+    
+    .overlay p {
+        color: rgb(85, 85, 85); /* Warna teks paragraf */
+        text-align: center; /* Memusatkan teks paragraf */
+        font-size: 16px; /* Ukuran font paragraf */
     }
     .background {
         width: 200%; /* Ubah width agar memenuhi seluruh layar pada layar kecil */
@@ -295,9 +396,9 @@ body {
     .background1 {
         order: 1;
         box-shadow: none;
-        top: 65%;
+        top:0;
         bottom: 1px;
-        height: 35%;
+        height: 100%;
         position: absolute;
         width: 100%;
         overflow: hidden; /* Konten yang meluap akan disembunyikan */

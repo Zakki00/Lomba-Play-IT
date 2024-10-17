@@ -1,6 +1,7 @@
 
 function toggleExpand(element) {
     element.classList.toggle('expanded');
+    console.log('Fungsi toggleExpand dipanggil.');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,3 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
     
+toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    setTimeout(() => {
+        AOS.refresh();
+    }, 300); // Menunggu 300ms sebelum AOS refresh
+});
