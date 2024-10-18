@@ -1,26 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
-/* AOS Animation */
-[data-aos] {
-    opacity: 0;
-    transition-property: opacity, transform;
-}
-
-[data-aos].aos-animate {
-    opacity: 1;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
-}
-
+/* Referensi CSS yang telah Anda berikan */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-}
-body{
-    background-color:  rgb(231, 212, 181);;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
+body {
+    background-color: rgb(231, 212, 181);
+    color: #333; /* Warna teks yang lebih gelap untuk kontras */
+}
+
+header {
+    position: relative;
+    z-index: 1000; /* Pastikan header di atas elemen lainnya */
+}
+
+.about-section {
+    padding: 20px;
+    max-width: 800px; /* Lebar maksimum untuk konten */
+    margin: 0 auto; /* Memusatkan konten */
+    text-align: left; /* Rata kiri untuk teks */
+}
+
+.about-section h1 {
+    font-size: 2.5rem; /* Ukuran font untuk judul utama */
+    margin-bottom: 20px; /* Jarak bawah */
+    color: #8B4513; /* Warna coklat yang hangat */
+}
+
+.about-section h2 {
+    font-size: 2rem; /* Ukuran font untuk subjudul */
+    margin-top: 20px; /* Jarak atas */
+    margin-bottom: 10px; /* Jarak bawah */
+    color: #6d5a31; /* Warna untuk subjudul */
+}
+
+.about-section p {
+    font-size: 1.2rem; /* Ukuran font untuk paragraf */
+    line-height: 1.6; /* Jarak antar baris */
+    margin-bottom: 15px; /* Jarak bawah */
+}
+
+.about-section ul {
+    margin-left: 20px; /* Jarak kiri untuk daftar */
+}
+
+.about-section li {
+    margin-bottom: 10px; /* Jarak bawah untuk item daftar */
+}
+
+/* Navbar yang Anda buat */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -37,7 +72,6 @@ body{
     border-radius: 8px;
 }
 
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -53,28 +87,10 @@ body{
     color: white;
     text-decoration: none;
     padding: 8px 15px;
-}
-.nav-links li::before {
-    background-color: #f0a500; /* Warna background hover (emas/oranye) */
-}
-
-
-.toggle {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-}
-/* Menata menu link secara umum */
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
     position: relative; /* Diperlukan untuk pseudo-elemen */
     transition: color 0.3s ease; /* Peralihan warna teks */
 }
 
-/* Hover efek pada link */
 .nav-links a:hover {
     color: #2e2b25; /* Warna teks berubah saat hover */
 }
@@ -92,7 +108,6 @@ body{
     z-index: -1; /* Agar latar belakang berada di belakang teks */
 }
 
-/* Hover efek background animasi */
 .nav-links li:hover::before {
     width: 100%; /* Mengisi seluruh lebar saat di hover */
 }
@@ -106,95 +121,4 @@ body{
 
 .nav-links li:hover {
     transform: translateY(-5px); /* Sedikit efek naik saat di hover */
-}
-
-
-@media (max-width: 768px) {
-    .navbar {
-        width: 100%; /* Lebar penuh di mobile */
-        padding: 10px; /* Sedikit padding untuk kenyamanan */
-        justify-content: space-between; /* Pastikan logo dan toggle sebaris */
-        font-size: 20px;
-        border-radius: 0 0 10px 10px;
-        background-color: #b9997600;
-        
-    }
-    .nav-links li {
-        width: 100%; /* Mengatur lebar li menjadi penuh */
-        display: block; /* Mengubah elemen li menjadi block */
-        margin: 0; /* Hilangkan margin untuk merapatkan */
-        text-align: center; /* Memastikan teks berada di tengah */
-        
-    }
-    .nav-links {
-        width: 100%; 
-        display: flex;
-        flex-direction: column; /* Menu vertikal */
-        align-items: center; /* Pastikan menu berada di tengah */
-        height: 45vh; /* Tinggi layar penuh untuk menu */
-        position: absolute;
-        top: 0; /* Posisi tepat di bawah navbar */
-        left: 0;
-        background-color: #000000b4;
-        opacity: 0;
-        border-radius: 0 0 20px 20px;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        transform: translateY(-10px);
-        z-index: 999;
-    }
-    .nav-links li::before {
-        content: '';
-        width: 0%; /* Mengisi seluruh lebar saat di hover */
-        position: absolute;
-        top: -20px;
-        left: 0;
-        height: 4rem;
-        border-radius: 10px;
-        background-color: #6d5a31; /* Warna background hover */
-        transition: width 0.4s ease;
-        z-index: -1; /* Agar latar belakang berada di belakang teks */
-    }
-    
-    .nav-links {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
-    }
-    
-    .nav-links.active {
-        max-height: 500px; /* Sesuaikan dengan tinggi maksimal elemen menu */
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    
-    .nav-links li {
-        margin: 1.5rem 0; /* Margin vertikal agar item rapi */
-        text-align: center;
-    }
-
-    .toggle {
-        display: block;
-        z-index: 1001;
-        position: relative;
-    }
-    
-        .container1 {
-            width: 100%; /* Lebar penuh untuk layar kecil */
-            height: 30%; /* Tinggi sesuai kebutuhan */
-            position: fixed; /* Tetap di posisi yang tetap */
-            bottom: 0; /* Posisikan di bagian bawah */
-            left: 0; /* Posisikan di kiri */
-            background-color: rgb(236, 159, 107); /* Warna background */
-        }
-    }
-
-@media(max-width:600px) {
-    .menu-item {
-        width: 90%;
-        height: auto !important;
-    }
 }

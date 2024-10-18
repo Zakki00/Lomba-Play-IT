@@ -15,22 +15,6 @@
     font-style: normal;
     
 }
-body{
-    background-color:  rgb(231, 212, 181);;
-}
-
-.container1 {
-    width: 100%;
-    height: 46%;
-    background-color: rgb(236, 159, 107);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: -1; /* Pastikan container di belakang */
-    border-radius: 10px;
-}
-
 
 main {
     padding-top: 7rem;
@@ -38,10 +22,9 @@ main {
     text-align: center;
 }
 body {
-    background-color: rgb(231, 212, 181);
     display: flex;
-    justify-content: center; /* Pusatkan secara horizontal */
-    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; 
+    align-items: center;
     height: 100vh;
     margin: 0;
 }
@@ -55,7 +38,7 @@ body {
     width: 100%; /* Agar grid bisa meluas sesuai lebar halaman */
     max-width: 1300px; /* Maksimal lebar untuk grid */
     position: absolute; 
-    top: 5rem; 
+    top: 70px; 
 }
 
 .menu-item {
@@ -67,7 +50,7 @@ body {
     padding: 2rem;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
     text-align: center;
     text-decoration: none;
     color: #333;
@@ -101,7 +84,7 @@ body {
     background-color: rgba(185, 159, 80, 0.671);
     padding: 10px 20px;
     width: 45%; /* Untuk tampilan desktop */
-    height: 4rem;
+    height:3rem;
     position: fixed;
     top: 0;
     right: 0;
@@ -254,16 +237,16 @@ body {
         z-index: 1001;
         position: relative;
     }
-    
-        .container1 {
-            width: 100%; /* Lebar penuh untuk layar kecil */
-            height: 30%; /* Tinggi sesuai kebutuhan */
-            position: fixed; /* Tetap di posisi yang tetap */
-            bottom: 0; /* Posisikan di bagian bawah */
-            left: 0; /* Posisikan di kiri */
-            background-color: rgb(236, 159, 107); /* Warna background */
-        }
+
+
+
+    .menu-item{
+        margin-bottom: 10px;
+        margin-top: -9px;
     }
+
+
+}
 
 
 @media(max-width:600px) {
@@ -272,18 +255,14 @@ body {
         height: auto !important;
     }
 }
-
-
-
-
 .background1 {
     background-color:#B99976;
     width: 100%;
-    height: 100vh; /* Mengisi seluruh tinggi viewport */
+    height: 100vh; 
     top: 0;
     left: 0;
     z-index: -1; /* Tetap di belakang elemen lainnya */
-    position: absolute;  
+    position: fixed;  
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kanan */
     overflow: hidden;
 
@@ -292,6 +271,7 @@ body {
     position: absolute;
     top: 1px;
     right: 1px;
+    z-index: 1;
 
 }
 .gambar2 img{
@@ -299,11 +279,14 @@ body {
     top: 30rem;
     left: 12px;
     bottom: 8rem;
+    z-index: 1;
+
 
 }
 .gambar3 img{
     position: absolute;
     top: -10rem;
+    z-index: 1;
     left: -11rem;
 
 }
@@ -311,6 +294,8 @@ body {
     position: absolute;
     top: 45rem;
     left: -11rem;
+    z-index: 1;
+
     
 }
 
@@ -318,22 +303,41 @@ body {
     position: absolute;
     top: 38rem;
     right: -11rem;
+    z-index: 1;
+
 
 }
-.background {
-    background-color: #D2B48C;
-    width: 45%;
-    height: 100vh; 
-    top: 0;
-    right: 0;
-    z-index: -1; 
-    position: absolute; 
-    box-shadow: -5px 0 15px rgba(109, 104, 104, 0.541); 
-    overflow: hidden;
+.gambar6 img{
+    position: absolute;
+    top: 8rem;
+    right: 40rem;
+    z-index: 1;
+
+
 }
-.background img{
-    width: 100%;
-   height:auto;
+.gambar7 img{
+    position: absolute;
+    top: 30rem;
+    right: 20rem;
+    z-index: 1;
+
+
+}
+.gambar8 img{
+    position: absolute;
+    top: 40rem;
+    right: 60rem;
+    z-index: 20;
+
+
+}
+.gambar9 img{
+    position: absolute;
+    top: 10rem;
+    right: 70rem;
+    z-index: 20;
+
+
 }
  .background1 {
     width: 100%; /* Lebar penuh layar */
@@ -395,6 +399,101 @@ body {
     /* Menyusun gambar-gambar di dalam background1 */
     .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
         margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
+    }
+}
+
+
+
+header  {
+
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+   
+@media (max-width: 600px) {
+    .wrapper {
+        width: 100vw; /* Lebar sesuai ukuran layar */
+        height: 100vh; /* Tinggi sesuai ukuran layar */
+        position: relative; /* Posisi relatif untuk elemen anak */
+        overflow: hidden; /* Menyembunyikan bagian yang keluar dari pembungkus */
+    }
+    .oval {
+        width: 1300px; /* Lebar lingkaran */
+        height: 1300px; /* Tinggi lingkaran, harus sama dengan lebar */
+        position: absolute;
+        bottom: -50rem;
+    }
+}
+
+ .background1 {
+    background-color:#B99976;
+    width: 100%;
+    height: 100vh; 
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: fixed;  
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); 
+    overflow: hidden;
+
+}
+
+.wayang {
+    position: absolute; /* Posisi absolut untuk penempatan */
+    bottom: 0px; /* Jarak dari bawah */
+    right: 0rem;
+}
+
+.gb-wayang1 {
+    position: relative; /* Posisi relatif untuk elemen pertama */
+    z-index: 1;
+    right: 38rem;
+    bottom: 0;
+}
+
+.gb-wayang2 {
+    position: absolute; /* Posisi absolut untuk elemen kedua */
+    bottom: 0; /* Menggeser ke bawah dari gb-wayang1 */
+    z-index: 1;
+    right: 4rem;
+}
+
+.wayang-img {
+    width: 500px; /* Atur lebar gambar lebih besar */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+}
+
+.wayang {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: center; /* Memusatkan gambar secara horizontal */
+    align-items: center; /* Memusatkan gambar secara vertikal */
+    flex-wrap: wrap; /* Membungkus gambar jika ruang tidak cukup */
+    margin: 20px; /* Margin untuk memberikan ruang di sekitar elemen */
+}
+
+.gb-wayang1, .gb-wayang2 {
+    flex: 1 1 300px; /* Fleksibilitas untuk gambar, dengan lebar minimum 300px */
+    max-width: 100%; /* Memastikan gambar tidak lebih lebar dari kontainer */
+    margin: 10px; /* Margin di sekitar setiap gambar */
+}
+
+.wayang-img {
+    width: 100%; /* Gambar akan mengambil lebar penuh dari kontainer */
+    height: auto; /* Memastikan proporsi gambar tetap terjaga */
+    border-radius: 10px; /* Menambahkan sudut melengkung pada gambar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk efek visual */
+}
+
+/* Media query untuk tampilan yang lebih kecil */
+@media (max-width: 768px) {
+    .wayang {
+        flex-direction: column; /* Mengubah arah flex menjadi kolom pada layar kecil */
+    }
+
+    .gb-wayang1, .gb-wayang2 {
+        flex: 1 1 100%; /* Gambar akan mengambil lebar penuh pada layar kecil */
     }
 }
 

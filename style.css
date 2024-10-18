@@ -12,11 +12,8 @@
     
 }
 body{
-    background-color:  rgb(231, 212, 181);;
-}
-
-.logo h1 {
-    font-size: 200px;
+    background-color:  rgb(231, 212, 181);
+    overflow: hidden;
 }
 
 .logo{
@@ -51,6 +48,7 @@ main{
     height: 100vh; /* Tinggi sesuai ukuran layar */
     position: relative; /* Posisi relatif untuk elemen anak */
     overflow: hidden; /* Menyembunyikan bagian yang keluar dari pembungkus */
+   
 }
 .oval {
     width: 5000px; /* Lebar lingkaran */
@@ -62,8 +60,9 @@ main{
     clip-path: circle(50); /* Memotong lingkaran sesuai ukuran layar */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.603); /* Bayangan untuk efek kedalaman */
     animation: pulse 40s infinite; /* Menambahkan animasi */
-}
+    z-index: -1;
 
+}
 /* Animasi untuk efek pulsasi */
 @keyframes pulse {
     0% {
@@ -142,14 +141,14 @@ body {
 .gambar5 img{
     position: absolute;
     top: 38rem;
-    right: -11rem;
-    z-index: 1;
-
+    right: 50rem;
+    z-index: 100;
+    width: 26%;
 
 }
 .gambar6 img{
     position: absolute;
-    top: 8rem;
+    top: -3rem;
     right: 40rem;
     z-index: 1;
 
@@ -163,14 +162,7 @@ body {
 
 
 }
-.gambar8 img{
-    position: absolute;
-    top: 40rem;
-    right: 60rem;
-    z-index: 20;
 
-
-}
 .gambar9 img{
     position: absolute;
     top: 10rem;
@@ -198,8 +190,6 @@ body {
     margin: 0;
     font-family: 'Garamond', serif; /* Menggunakan font yang memiliki nuansa klasik */
     background-color: #f0e5d8; /* Warna latar belakang yang lembut */
-    justify-content: center;
-    align-items: center;
     height: 100vh; /* Mengisi tinggi viewport */
 }
 
@@ -213,10 +203,34 @@ body {
     top: 10rem;
     left: 3rem;
     z-index: 1;
+   
 }
-
+.overlay img{
+  width: 20%;
+  position: absolute;
+}
+.border1{
+    left: 0;
+    top: 0;
+}
+.border2{
+    right: -3rem;
+    top: 3rem;
+    transform: rotate(90deg);
+}
+.border3{
+    right: -0.1rem;
+    top: 6rem;
+    transform: rotate(180deg);
+}
+.border4{
+    left: -2.9rem;
+    top: 3.4rem;
+    transform: rotate(-90deg);
+}
 h2 {
-    font-size: 5rem; /* Ukuran font yang besar untuk judul */
+    padding: 20px;
+    font-size: 4rem; /* Ukuran font yang besar untuk judul */
     color: #8B4513; /* Warna coklat yang hangat */
     margin-bottom: 10px; /* Jarak bawah judul */
     font-family: 'Papyrus', cursive; /* Font yang lebih artistik untuk judul */
@@ -229,26 +243,39 @@ p {
     color: #555; /* Warna teks yang lebih gelap untuk kontras */
     line-height: 1.5; /* Jarak antar baris */
 }
-.wayang {
-    position: absolute; /* Posisi absolut untuk penempatan */
-    bottom: 20px; /* Jarak dari bawah */
-    left: 20px; /* Jarak dari kiri */
-}
+
 
 .gb-wayang1 {
-    position: relative; /* Posisi relatif untuk elemen pertama */
-}
+    position: absolute; /* Posisi relatif untuk elemen pertama */
+    width: 30%;
+    right: 10px ;
 
+    z-index: 1;
+    bottom: 0;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Mengatur bayangan */
+}
 .gb-wayang2 {
+    width: 20%;
+    height: auto;
     position: absolute; /* Posisi absolut untuk elemen kedua */
-    left: 20px; /* Menggeser ke kanan dari gb-wayang1 */
-    top: 20px; /* Menggeser ke bawah dari gb-wayang1 */
+    transform: scalex(-1);
+    right: -4rem;
+    bottom: -2rem;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Mengatur bayangan */
+
 }
 
-.wayang-img {
-    width: 250px; /* Atur lebar gambar lebih besar */
-    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+.wayang {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: center; /* Memusatkan gambar secara horizontal */
+    align-items: center; /* Memusatkan gambar secara vertikal */
+    flex-wrap: wrap; /* Membungkus gambar jika ruang tidak cukup */
+    margin: 20px; /* Margin untuk memberikan ruang di sekitar elemen */
 }
+
+
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -312,8 +339,7 @@ p {
     content: '';
     position: absolute;
     top: -5px;
-    width: 0%;
-    height: 2rem;
+    height: 3rem;
     border-radius: 10px;
     background-color: #f0a500; /* Warna background hover */
     transition: width 0.4s ease;
@@ -339,133 +365,6 @@ p {
 
 @media (max-width: 768px) {
    
-    body {
-        overflow: hidden;
-    }
-    .logo {
-        visibility: hidden; /* Elemen tetap ada tapi tidak terlihat */
-      }
-    
-  * {
-        width: 100%;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .overlay {
-        width: 90%; /* Lebar responsif */
-        max-width: 600px; /* Lebar maksimum untuk tampilan yang lebih besar */
-        padding: 10px; /* Ruang di dalam overlay */
-        border-radius: 10px; /* Sudut membulat */
-        text-align: center; /* Memusatkan teks */
-        background-color: rgba(236, 158, 107, 0.486); /* Warna latar belakang */
-        backdrop-filter: blur(15px); /* Efek blur di belakang overlay */
-        position: absolute; /* Posisi absolut untuk penempatan */
-        top: 50%; /* Menempatkan overlay di tengah vertikal */
-        left: 50%; /* Menempatkan overlay di tengah horizontal */
-        transform: translate(-50%, -50%); /* Menggeser overlay ke tengah */
-        height: auto; /* Tinggi otomatis untuk menyesuaikan konten */
-    }
-    
-    .overlay h2 {
-        color: rgb(139, 69, 19); /* Warna teks judul */
-        text-align: center; /* Memusatkan teks judul */
-        font-size: 40px; /* Ukuran font judul */
-    }
-    
-    .overlay p {
-        color: rgb(85, 85, 85); /* Warna teks paragraf */
-        text-align: center; /* Memusatkan teks paragraf */
-        font-size: 16px; /* Ukuran font paragraf */
-    }
-    .background {
-        width: 200%; /* Ubah width agar memenuhi seluruh layar pada layar kecil */
-        height: 65%;
-        box-shadow: 4px 10px 19px rgba(0, 0, 0, 0.541);
-    }
-    .background img {
-        width: 100%; /* Lebar penuh */
-        height: 100%; /* Tinggi penuh agar memanjang sesuai elemen */
-        object-fit: cover; /* Pastikan gambar tetap proporsional dan mengisi elemen */
-    }
-
-    .background1, .background {
-        width: 100%;
-        position: absolute;
-    }
-
-    .background1 {
-        order: 1;
-        box-shadow: none;
-        top:0;
-        bottom: 1px;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        overflow: hidden; /* Konten yang meluap akan disembunyikan */
-    }
-
-    /* Mengatur gambar di dalam .background1 dan .background agar responsif */
-    .background1 img {
-        width: 70%;
-        height: auto;
-    }
-
-    .gambar1 img {
-        position: absolute;
-        top: -3rem;
-        right: -8rem;
-    }
-
-    .gambar2 img {
-        position: absolute;
-        top: 4rem;
-        left: 3rem;
-    }
-
-    .gambar3 img {
-        position: absolute;
-        top: -4rem;
-        left: -7rem;
-    }
-
-    .gambar4 img {
-        position: absolute;
-        top: 10rem;
-        left: -5rem;
-    }
-
-    .gambar5 img {
-        position: absolute;
-        top: 10rem;
-        right: -8rem;
-    }
-
-    /* Menyusun gambar-gambar di dalam background1 */
-    .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
-        margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
-    }
-    .logo {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh;     
-    }
-
-    .logo h1 {
-        display: inline-block;
-        background-color: rgb(236, 159, 107);
-        padding: 10px 20px;
-        text-align: center;
-        border-radius: 10px;
-        max-width: 90%; 
-        width: auto; 
-        font-size: 10rem;
-    }
-
-    .down {
-        font-size: 2.5rem; /* Ukuran font untuk layar kecil */
-        margin: 10px 0; /* Memberi jarak antar elemen */
-    }
     .navbar {
         width: 100%; /* Lebar penuh di mobile */
         padding: 10px; /* Sedikit padding untuk kenyamanan */
@@ -538,15 +437,165 @@ p {
         position: relative;
     }
     
-    .container1 {
-        width: 100%; /* Lebar penuh untuk layar kecil */
-        height: 30%; /* Tinggi sesuai kebutuhan */
-        position: fixed; /* Tetap di posisi yang tetap */
-        bottom: 0; /* Posisikan di bagian bawah */
-        left: 0; /* Posisikan di kiri */
-        background-color: rgb(236, 159, 107); /* Warna background */
+    body {
+        overflow: hidden;
     }
+    .overlay {
+       
+        width: 90%; /* Lebar responsif */
+        max-width: 600px; /* Lebar maksimum untuk tampilan yang lebih besar */
+        padding: 10px; /* Ruang di dalam overlay */
+        border-radius: 10px; /* Sudut membulat */
+        text-align: center; /* Memusatkan teks */
+        backdrop-filter: blur(15px); /* Efek blur di belakang overlay */
+        position: absolute; /* Posisi absolut untuk penempatan */
+        top: 35%; /* Menempatkan overlay di tengah vertikal */
+        left: 50%; /* Menempatkan overlay di tengah horizontal */
+        transform: translate(-50%, -50%); /* Menggeser overlay ke tengah */
+        height: auto; /* Tinggi otomatis untuk menyesuaikan konten */
+    }
+    
+    .overlay h2 {
+        color: rgb(139, 69, 19); /* Warna teks judul */
+        text-align: center; /* Memusatkan teks judul */
+        font-size: 40px; /* Ukuran font judul */
         
     }
+    
+    .overlay p {
+        color: rgb(85, 85, 85); /* Warna teks paragraf */
+        text-align: center; /* Memusatkan teks paragraf */
+        font-size: 16px; /* Ukuran font paragraf */
+        margin: 30px;
+    }
+    .background {
+        width: 200%; /* Ubah width agar memenuhi seluruh layar pada layar kecil */
+        height: 65%;
+        box-shadow: 4px 10px 19px rgba(0, 0, 0, 0.541);
+    }
+    .background img {
+        width: 100%; /* Lebar penuh */
+        height: 100%; /* Tinggi penuh agar memanjang sesuai elemen */
+        object-fit: cover; /* Pastikan gambar tetap proporsional dan mengisi elemen */
+    }
+
+    .background1, .background {
+        width: 100%;
+        position: absolute;
+    }
+
+    .background1 {
+        order: 1;
+        box-shadow: none;
+        top:0;
+        bottom: 1px;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        overflow: hidden; /* Konten yang meluap akan disembunyikan */
+    }
+    /* Mengatur gambar di dalam .background1 dan .background agar responsif */
+    .background1 img {
+        width: 70%;
+        height: auto;
+    }
+
+    .gambar1 img {
+        position: absolute;
+        top: -3rem;
+        right: -8rem;
+    }
+
+    .gambar2 img {
+        position: absolute;
+        top: 4rem;
+        left: 3rem;
+    }
+
+    .gambar3 img {
+        position: absolute;
+        top: -4rem;
+        left: -7rem;
+    }
+
+    .gambar4 img {
+        position: absolute;
+        top: 10rem;
+        left: -5rem;
+    }
+
+    .gambar5 img {
+        position: absolute;
+        top: 10rem;
+        right: -8rem;
+    }
+
+    /* Menyusun gambar-gambar di dalam background1 */
+    .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
+        margin: 10px auto; 
+    }
+    .logo {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh;     
+    }
+
+    .logo h1 {
+        display: inline-block;
+        background-color: rgb(236, 159, 107);
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 10px;
+        max-width: 90%; 
+        width: auto; 
+        font-size: 10rem;
+    }
+
+    .down {
+        font-size: 2.5rem; /* Ukuran font untuk layar kecil */
+        margin: 10px 0; /* Memberi jarak antar elemen */
+    }
+    .overlay img{
+       width: 60%;
+       position: absolute;
+     }
+     .border1{
+         left: 0;
+         top: 0;
+     }
+     .border2{
+         right: -3rem;
+         top: 3rem;
+         transform: rotate(90deg);
+     }
+     .border3{
+         right: -0.1rem;
+         top: 17.8rem;
+         transform: rotate(180deg);
+     }
+     .border4{
+         left: -2.9rem;
+         top: 15.0rem;
+         transform: rotate(-90deg);
+     }
+     
+       .gb-wayang1 {
+        
+           position: absolute; /* Posisi relatif untuk elemen pertama */
+           right: 3rem;
+           z-index: 1;
+           bottom: -4rem;
+           filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Mengatur bayangan */
+       }
+      
+       .gb-wayang2 {
+        
+      
+           filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Mengatur bayangan */
+       
+       }
+        
+}
     
 
