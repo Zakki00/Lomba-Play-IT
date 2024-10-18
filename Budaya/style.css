@@ -218,7 +218,6 @@
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
- 
     max-width: 100%; /* Hindari overflow */
 }
 
@@ -311,17 +310,16 @@ footer{
     width: 80%;
     height: auto;
 }
-
 .background1 {
     background-color:#B99976;
     width: 100%;
-    height: 100vh; /* Mengisi seluruh tinggi viewport */
+    height: 100vh; 
     top: 0;
     left: 0;
     z-index: -1; /* Tetap di belakang elemen lainnya */
     position: fixed;  
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kanan */
-   
+    overflow: hidden;
 
 }
 .gambar1 img{
@@ -359,14 +357,14 @@ footer{
 .gambar5 img{
     position: absolute;
     top: 38rem;
-    right: 50rem;
-    z-index: 100;
-    width: 26%;
+    right: -11rem;
+    z-index: 1;
+
 
 }
 .gambar6 img{
     position: absolute;
-    top: -3rem;
+    top: 8rem;
     right: 40rem;
     z-index: 1;
 
@@ -380,7 +378,14 @@ footer{
 
 
 }
+.gambar8 img{
+    position: absolute;
+    top: 40rem;
+    right: 60rem;
+    z-index: 20;
 
+
+}
 .gambar9 img{
     position: absolute;
     top: 10rem;
@@ -389,6 +394,17 @@ footer{
 
 
 }
+ .background1 {
+  
+    width: 100%; /* Lebar penuh layar */
+    height: 100vh; /* Tinggi penuh layar */
+    position: fixed; /* Tetap di posisi */
+    bottom: 0; /* Posisikan di bagian bawah */
+    left: 0; /* Posisikan di kiri */
+    background-color:rgb(185, 153, 118); /* Warna background */
+    z-index: -1; /* Di bawah semua elemen lain */
+}
+
 /* Responsive Layout untuk Mobile */
 @media only screen and (max-width: 768px){
     
@@ -399,7 +415,6 @@ footer{
             bottom: 0; /* Posisikan di bagian bawah */
             left: 0; /* Posisikan di kiri */
             background-color: rgb(236, 159, 107); /* Warna background */
-          
     }
     /* Mengatur gambar di dalam .background1 dan .background agar responsif */
     .background1 img {
@@ -443,6 +458,15 @@ footer{
     }
 }
 
+
+
+header  {
+
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
 /* Media Queries untuk Responsif */
 @media (max-width: 768px) {
     .container, .container1, .container2 {
