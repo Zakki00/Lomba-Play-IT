@@ -23,20 +23,6 @@
    
 }
 
-/* Atur overflow untuk menghindari geser kanan kiri */
-body {
-    overflow-x: hidden; /* Menghilangkan scroll horizontal */
-}
-
-/* Styling Header */
-
-/* Logo Styling */
-.logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
-}
-
 .image-container {
     width: 100%;
     height: auto;
@@ -333,15 +319,16 @@ footer{
     top: 0;
     left: 0;
     z-index: -1; /* Tetap di belakang elemen lainnya */
-    position: absolute;  
+    position: fixed;  
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan ke kanan */
-    overflow: hidden;
+   
 
 }
 .gambar1 img{
     position: absolute;
     top: 1px;
     right: 1px;
+    z-index: 1;
 
 }
 .gambar2 img{
@@ -349,11 +336,14 @@ footer{
     top: 30rem;
     left: 12px;
     bottom: 8rem;
+    z-index: 1;
+
 
 }
 .gambar3 img{
     position: absolute;
     top: -10rem;
+    z-index: 1;
     left: -11rem;
 
 }
@@ -361,40 +351,44 @@ footer{
     position: absolute;
     top: 45rem;
     left: -11rem;
+    z-index: 1;
+
     
 }
 
 .gambar5 img{
     position: absolute;
     top: 38rem;
-    right: -11rem;
+    right: 50rem;
+    z-index: 100;
+    width: 26%;
 
 }
-.background {
-    background-color: #D2B48C;
-    width: 45%;
-    height: 100vh; 
-    top: 0;
-    right: 0;
-    z-index: -1; 
-    position: absolute; 
-    box-shadow: -5px 0 15px rgba(109, 104, 104, 0.541); 
-    overflow: hidden;
+.gambar6 img{
+    position: absolute;
+    top: -3rem;
+    right: 40rem;
+    z-index: 1;
+
+
 }
-.background img{
-    width: 100%;
-   height:auto;
-}
- .background1 {
-    width: 100%; /* Lebar penuh layar */
-    height: 100vh; /* Tinggi penuh layar */
-    position: fixed; /* Tetap di posisi */
-    bottom: 0; /* Posisikan di bagian bawah */
-    left: 0; /* Posisikan di kiri */
-    background-color: rgb(236, 159, 107); /* Warna background */
-    z-index: -1; /* Di bawah semua elemen lain */
+.gambar7 img{
+    position: absolute;
+    top: 30rem;
+    right: 20rem;
+    z-index: 1;
+
+
 }
 
+.gambar9 img{
+    position: absolute;
+    top: 10rem;
+    right: 70rem;
+    z-index: 20;
+
+
+}
 /* Responsive Layout untuk Mobile */
 @media only screen and (max-width: 768px){
     
@@ -405,6 +399,7 @@ footer{
             bottom: 0; /* Posisikan di bagian bawah */
             left: 0; /* Posisikan di kiri */
             background-color: rgb(236, 159, 107); /* Warna background */
+          
     }
     /* Mengatur gambar di dalam .background1 dan .background agar responsif */
     .background1 img {
