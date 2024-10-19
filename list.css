@@ -84,7 +84,6 @@ body {
     
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -416,7 +415,7 @@ header  {
 
     font-size: 20px;
     font-family: "Poppins", sans-serif;
-    font-weight: 800;
+    font-weight: 1000;
     font-style: normal;
 }
    
