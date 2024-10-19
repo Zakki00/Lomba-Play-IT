@@ -93,9 +93,7 @@
 
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
-    body{
-       
-    }
+
     .container {
         margin-top: 40rem;
         margin-bottom: 10rem;

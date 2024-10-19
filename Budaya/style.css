@@ -208,7 +208,7 @@
 .container,.container1, .container2 {
     padding: 40px;
     margin: 20px auto;
-    background: rgba(100, 100, 100, 0.8);
+    background: linear-gradient(135deg, rgba(245, 196, 139, 0.961), rgba(255, 255, 255, 0.8)); 
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -222,7 +222,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg,rgba(255, 255, 255, 0.482), rgba(245, 196, 139, 0.961) ); 
     object-fit: cover;
 }
 
@@ -237,7 +237,7 @@
 .judul h2 {
     font-size: 28px;
     font-weight: bold;
-    color: #ece4e4;
+    color: #1f1919;
     margin-bottom: 20px;
 }
 
@@ -245,7 +245,7 @@
     font-size: 18px;
     line-height: 1.8;
     text-align: justify;
-    color: #ffffff; 
+    color: #2f1f1f;     
 }
 footer{
     margin: 10rem;
@@ -261,7 +261,7 @@ footer{
     left: 1rem;
     align-items: flex-start;
     padding: 40px;
-    background: rgba(100, 100, 100, 0.8);
+    background: linear-gradient(135deg, rgba(245, 196, 139, 0.961), rgba(255, 255, 255, 0.8)); 
     border-radius: 15px;
     margin-top: 20px;
     height: auto; /* Tinggi otomatis */
@@ -276,7 +276,7 @@ footer{
     left: 1rem;
     align-items: flex-start;
     padding: 40px;
-    background: rgba(100, 100, 100, 0.8);
+    background: linear-gradient(135deg, rgba(245, 196, 139, 0.961), rgba(255, 255, 255, 0.8)); 
     border-radius: 15px;
     margin-top: 20px;
     height: auto; /* Tinggi otomatis */
@@ -294,7 +294,7 @@ footer{
     top: 5rem;
     align-items: flex-start;
     padding: 40px;
-    background: rgba(100, 100, 100, 0.8);
+    background: linear-gradient(135deg, rgba(245, 196, 139, 0.961), rgba(255, 255, 255, 0.8)); 
     border-radius: 15px;
     margin-top: 20px;
     height: auto; /* Tinggi otomatis */
