@@ -495,7 +495,19 @@ p {
         top: 10rem;
         right: -8rem;
     }
-
+    .gambar6 img {
+        position: absolute;
+        top:30rem;
+        right: 17rem;
+    } .gambar7 img {
+        position: absolute;
+        top: 45rem;
+        right: 10rem;
+    } .gambar9 img {
+        position: absolute;
+        top: 20rem;
+        right: 8rem;
+    }
     /* Menyusun gambar-gambar di dalam background1 */
     .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
         margin: 10px auto; 

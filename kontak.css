@@ -39,7 +39,7 @@ body {
 }
 .gmb{
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow: hidden;
     border-radius: 10px;
   
@@ -135,16 +135,18 @@ body {
     }
     .gmb{
         width: 100%;
-        height: 90%;
+        height: 100%;
         overflow: hidden;
         border-radius: 10px;
       
     }
     .gmb img{
-      background-size: cover;
-      width: 100%;
-    
+        background-size: cover;
+        width: 100%;
+        height: auto !important;
       
+        object-fit: cover; /* Menjaga rasio aspek gambar */
+        display: block; /* Menghilangkan spasi di bawah gambar */
     }
     .team-box:hover {
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
@@ -517,8 +519,12 @@ body{
     top: 30rem;
     right: 20rem;
     z-index: 1;
-
-
+}
+.gambar8 img{
+    position: absolute;
+    top: 40rem;
+    right: -5rem;
+    z-index: 20;
 }
 
 .gambar9 img{
@@ -575,7 +581,19 @@ body{
         top: 10rem;
         right: -8rem;
     }
-
+    .gambar6 img {
+        position: absolute;
+        top:30rem;
+        right: 17rem;
+    } .gambar7 img {
+        position: absolute;
+        top: 45rem;
+        right: 10rem;
+    } .gambar9 img {
+        position: absolute;
+        top: 20rem;
+        right: 8rem;
+    }
     /* Menyusun gambar-gambar di dalam background1 */
     .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
         margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */

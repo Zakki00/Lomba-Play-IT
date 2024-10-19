@@ -35,7 +35,7 @@
     gap: 20px;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #C0976A;
+    background: linear-gradient(135deg, rgba(245, 196, 139, 0.961), rgba(255, 255, 255, 0.8)); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -82,6 +82,7 @@
 .judul h2 {
     font-size: 2em;
     margin-bottom: 10px;
+    color: #2e2b25;
 }
 
 /* Gaya untuk paragraf penjelasan */
@@ -140,7 +141,7 @@ body{
 .judul h2 {
     font-size: 28px;
     font-weight: bold;
-    color: #ece4e4;
+    color: rgb(26, 25, 25);
     margin-bottom: 20px;
 }
 
@@ -148,7 +149,7 @@ body{
     font-size: 18px;
     line-height: 1.8;
     text-align: justify;
-    color: #ffffff; 
+   color: #2e2b25;
 }
 
 
@@ -308,6 +309,13 @@ body{
 
 
 }
+.gambar8 img{
+    position: absolute;
+    top: 20rem;
+    right: -2rem;
+    z-index: 20;
+}
+
 
 .gambar9 img{
     position: absolute;
@@ -439,7 +447,19 @@ body{
         top: 10rem;
         right: -8rem;
     }
-
+    .gambar6 img {
+        position: absolute;
+        top:30rem;
+        right: 17rem;
+    } .gambar7 img {
+        position: absolute;
+        top: 45rem;
+        right: 10rem;
+    } .gambar9 img {
+        position: absolute;
+        top: 20rem;
+        right: 8rem;
+    }   
     /* Menyusun gambar-gambar di dalam background1 */
     .gambar1 img, .gambar2 img, .gambar3 img, .gambar4 img, .gambar5 img {
         margin: 10px auto; /* Mengatur jarak agar gambar lebih teratur di mobile */
