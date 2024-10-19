@@ -166,7 +166,7 @@ body {
 }
 
 .overlay {
-    background: linear-gradient(135deg, rgba(255, 223, 186, 0.674), rgba(255, 255, 255, 0.8)); /* Gradien latar belakang */
+    background: linear-gradient(135deg, rgba(255, 223, 186, 0.734), rgba(255, 255, 255, 0.8)); /* Gradien latar belakang */
     border-radius: 15px; /* Sudut membulat */
     padding: 20px; /* Ruang di dalam overlay */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek kedalaman */
@@ -175,6 +175,7 @@ body {
     top: 10rem;
     left: 3rem;
     z-index: 1;
+    backdrop-filter: blur(20px);
    
 }
 .overlay img{
@@ -212,7 +213,7 @@ h2 {
 
 p {
     font-size: 1.2em; /* Ukuran font yang lebih kecil untuk paragraf */
-    color: #555; /* Warna teks yang lebih gelap untuk kontras */
+    color:rgb(160, 119, 91); /* Warna teks yang lebih gelap untuk kontras */
     line-height: 1.5; /* Jarak antar baris */
 }
 .gb-wayang2 img{
@@ -407,7 +408,6 @@ p {
         overflow: hidden;
     }
     .overlay {
-        background: linear-gradient(135deg, rgba(255, 223, 186, 0.32), rgba(255, 255, 255, 0.411)); /* Gradien latar belakang */
         width: 90%; /* Lebar responsif */
         max-width: 600px; /* Lebar maksimum untuk tampilan yang lebih besar */
         padding: 10px; /* Ruang di dalam overlay */
@@ -429,7 +429,6 @@ p {
     }
     
     .overlay p {
-        color: rgb(85, 85, 85); /* Warna teks paragraf */
         text-align: center; /* Memusatkan teks paragraf */
         font-size: 16px; /* Ukuran font paragraf */
         margin: 30px;
