@@ -166,7 +166,7 @@ body {
 }
 
 .overlay {
-    background: linear-gradient(135deg, rgba(255, 223, 186, 0.9), rgba(255, 255, 255, 0.8)); /* Gradien latar belakang */
+    background: linear-gradient(135deg, rgba(255, 223, 186, 0.674), rgba(255, 255, 255, 0.8)); /* Gradien latar belakang */
     border-radius: 15px; /* Sudut membulat */
     padding: 20px; /* Ruang di dalam overlay */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek kedalaman */
@@ -407,7 +407,7 @@ p {
         overflow: hidden;
     }
     .overlay {
-       
+        background: linear-gradient(135deg, rgba(255, 223, 186, 0.32), rgba(255, 255, 255, 0.411)); /* Gradien latar belakang */
         width: 90%; /* Lebar responsif */
         max-width: 600px; /* Lebar maksimum untuk tampilan yang lebih besar */
         padding: 10px; /* Ruang di dalam overlay */
@@ -425,7 +425,7 @@ p {
         color: rgb(139, 69, 19); /* Warna teks judul */
         text-align: center; /* Memusatkan teks judul */
         font-size: 40px; /* Ukuran font judul */
-        
+        z-index: 10;
     }
     
     .overlay p {
